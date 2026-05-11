@@ -1,3 +1,11 @@
 {
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "window.closeWhenEmpty": false,
+    "zenMode.centerLayout": true,
+    "zenMode.fullScreen": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideLineNumbers": true,
+    "zenMode.hideStatusBar": false,
+    "zenMode.restore": false
 }

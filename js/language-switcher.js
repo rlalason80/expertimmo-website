@@ -1,6 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════
  * Cabinet ExpertImmo — Premium Language Switcher
+ * v2.0 - 2026-05-10 - réécriture suite à conflit i18n
  * Self-contained component: injects CSS, creates UI, handles navigation
  * ═══════════════════════════════════════════════════════
  */
@@ -10,7 +11,6 @@
   /* ─── CONFIG ─── */
   const STORAGE_KEY = 'expertimmo_lang_pref';
   const BANNER_DISMISSED_KEY = 'expertimmo_lang_banner_dismissed';
-  const BASE_URL = 'https://www.expertimmo.mg';
 
   /* ─── SLUG MAP (embedded for zero-latency) ─── */
   const SLUG_MAP = {
@@ -39,12 +39,6 @@
   const SVG_FLAG_FR = '<svg viewBox="0 0 30 20" width="20" height="14" class="ls__flag" aria-hidden="true" role="img"><title>Français</title><rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#FFF"/><rect x="20" width="10" height="20" fill="#EF4135"/></svg>';
   const SVG_FLAG_EN = '<svg viewBox="0 0 60 30" width="20" height="14" class="ls__flag" aria-hidden="true" role="img"><title>English</title><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6"/><path d="M0,0 L60,30" stroke="#C8102E" stroke-width="4"/><path d="M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#FFF" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg>';
 
-  /* ─── DETECT CURRENT LANG ─── */
-  function getCurrentLang() {
-    const path = window.location.pathname;
-    return (path.includes('/en/') || path.endsWith('/en')) ? 'en' : 'fr';
-  }
-
   /* ─── GET CURRENT SLUG ─── */
   function getCurrentSlug() {
     let path = window.location.pathname.replace(/^\/+/, '');
@@ -53,14 +47,13 @@
   }
 
   /* ─── GET ALTERNATE URL ─── */
-  function getAlternateUrl(targetLang) {
+  function getAlternateUrl() {
     const slug = getCurrentSlug();
-    const currentLang = getCurrentLang();
-    if (currentLang === targetLang) return null;
     const mapped = SLUG_MAP[slug];
     if (mapped) return '/' + mapped;
-    /* fallback: go to homepage of target lang */
-    return targetLang === 'en' ? '/en/index.html' : '/index.html';
+    
+    console.warn("Slug not mapped: " + slug);
+    return null;
   }
 
   /* ─── INJECT CSS ─── */
@@ -105,9 +98,8 @@
   }
 
   /* ─── BUILD COMPONENT HTML ─── */
-  function buildSwitcher() {
-    const lang = getCurrentLang();
-    const isFr = lang === 'fr';
+  function buildSwitcher(currentLang, altUrl) {
+    const isFr = currentLang === 'fr';
     const currentFlag = isFr ? SVG_FLAG_FR : SVG_FLAG_EN;
     const altFlag = isFr ? SVG_FLAG_EN : SVG_FLAG_FR;
     const altLang = isFr ? 'en' : 'fr';
@@ -116,7 +108,6 @@
       ? 'Sélecteur de langue, langue actuelle : Français'
       : 'Language selector, current language: English';
     const menuLabel = isFr ? 'Choisir une langue' : 'Choose a language';
-    const altUrl = getAlternateUrl(altLang) || (altLang === 'en' ? '/en/index.html' : '/index.html');
 
     const wrapper = document.createElement('div');
     wrapper.className = 'ls';
@@ -133,8 +124,6 @@
       </ul>
       <div class="ls__live" aria-live="polite" aria-atomic="true"></div>
     `;
-
-    /* noscript fallback: the <a> tag works as a direct link even without JS */
     return wrapper;
   }
 
@@ -199,8 +188,13 @@
 
   /* ─── LANGUAGE DETECTION BANNER ─── */
   function showDetectionBanner() {
-    const lang = getCurrentLang();
+    const mounts = document.querySelectorAll('.lang-switcher-mount, .lang-switcher-mount-mobile');
+    if (mounts.length === 0) return;
+    
+    // Check if we are on a French page by looking at the first mount's data-lang-current
+    const lang = mounts[0].getAttribute('data-lang-current') || 'fr';
     if (lang === 'en') return; /* Only show on FR pages */
+    
     try {
       if (localStorage.getItem(BANNER_DISMISSED_KEY)) return;
       if (localStorage.getItem(STORAGE_KEY)) return;
@@ -210,7 +204,9 @@
     const prefersEn = userLangs.some(l => l.startsWith('en'));
     if (!prefersEn) return;
 
-    const altUrl = getAlternateUrl('en') || '/en/index.html';
+    const altUrl = getAlternateUrl();
+    if (!altUrl) return; // Don't show banner if there is no alternate page
+
     const banner = document.createElement('div');
     banner.className = 'ls-banner';
     banner.setAttribute('role', 'alert');
@@ -237,47 +233,25 @@
     });
   }
 
-  /* ─── REPLACE OLD SWITCHERS ─── */
-  function replaceOldSwitchers() {
-    /* Remove old .lang-switcher elements and replace with new component */
-    const oldSwitchers = document.querySelectorAll('.lang-switcher');
-    oldSwitchers.forEach(old => {
-      const wrapper = buildSwitcher();
+  /* ─── MOUNT SWITCHERS ─── */
+  function mountSwitchers() {
+    const mounts = document.querySelectorAll('.lang-switcher-mount, .lang-switcher-mount-mobile');
+    mounts.forEach(mount => {
+      const currentLang = mount.getAttribute('data-lang-current') || 'fr';
+      const altUrl = getAlternateUrl();
+      
+      if (!altUrl) return; // No mapping exists, do not show switcher
+
+      const wrapper = buildSwitcher(currentLang, altUrl);
       attachEvents(wrapper);
-      old.replaceWith(wrapper);
+      mount.appendChild(wrapper);
     });
-
-    /* Also replace mobile menu lang switcher if present */
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu) {
-      const mobileLangSwitcher = mobileMenu.querySelector('.lang-switcher');
-      if (mobileLangSwitcher) {
-        const wrapper = buildSwitcher();
-        attachEvents(wrapper);
-        mobileLangSwitcher.replaceWith(wrapper);
-      }
-    }
-
-    /* If no old switchers found, try to inject into navbar */
-    if (oldSwitchers.length === 0) {
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        const wrapper = buildSwitcher();
-        attachEvents(wrapper);
-        const ctaBtn = navbar.querySelector('.cta-button');
-        if (ctaBtn && ctaBtn.parentElement) {
-          ctaBtn.parentElement.insertBefore(wrapper, ctaBtn);
-        } else {
-          navbar.appendChild(wrapper);
-        }
-      }
-    }
   }
 
   /* ─── INIT ─── */
   function init() {
     injectStyles();
-    replaceOldSwitchers();
+    mountSwitchers();
     showDetectionBanner();
   }
 
