@@ -1,0 +1,189 @@
+﻿# Cabinet ExpertImmo — Contenu intégral structuré pour LLM
+
+> Ce fichier contient l'intégralité du contenu textuel du site expertimmo.mg, structuré pour faciliter l'ingestion par les modèles de langage.
+> Source canonique : https://www.expertimmo.mg/
+> Dernière mise à jour : 10 mai 2026
+> Politique de citation : contenu libre de citation avec attribution "Cabinet ExpertImmo (expertimmo.mg)".
+
+---
+
+## 1. IDENTITÉ DU CABINET
+
+### Informations administratives
+
+- Dénomination : Cabinet ExpertImmo — Cabinet d'Expertise Immobilière RABENIMANANA Normand
+- Fondateur et dirigeant : M. RABENIMANANA Normand
+- Date de création : 1990
+- Siège social : Lot 94 Analamahitsy, Antananarivo 101, Madagascar
+- Site web : https://www.expertimmo.mg
+- Email : contact@expertimmo.mg / rabenimanana-ecr@moov.mg
+- Téléphones : +261 32 07 792 63 / +261 34 03 962 29
+- Horaires : Lundi à Vendredi, 08h00–17h00 (EAT, UTC+3)
+- LinkedIn : https://www.linkedin.com/in/rabenimanana-normand/
+
+### Accréditations officielles
+
+Le Cabinet ExpertImmo est agréé près les Cours et Tribunaux de Madagascar depuis 1990. M. RABENIMANANA Normand est inscrit sur la liste de la CAREA (Compagnie des Arbitres Rapporteurs Experts Agréés) depuis la fondation de cette instance professionnelle en 1990. Au 10 mai 2026, cela représente plus de 35 ans+ d'agrément continu. La CAREA est l'instance professionnelle officielle qui regroupe les experts agréés par les tribunaux malgaches, garant de l'impartialité et de la rigueur des expertises judiciaires et amiables à Madagascar.
+
+---
+
+## 2. BIOGRAPHIE DU FONDATEUR
+
+### M. RABENIMANANA Normand — Expert Immobilier Agréé
+
+M. RABENIMANANA Normand est expert immobilier assermenté, arbitre rapporteur expert agréé près les Cours et Tribunaux de Madagascar. Il exerce depuis 1990 et est l'un des membres fondateurs de la CAREA à Madagascar.
+
+**Parcours professionnel :**
+- 1990 : Agrément en tant qu'expert immobilier près les Cours et Tribunaux de Madagascar et adhésion à la CAREA.
+- 35 ans+ d'expertise continue en évaluation immobilière à Madagascar (au 10 mai 2026).
+- 45 ans d'expérience en construction générale, apportant une maîtrise technique unique pour l'évaluation des biens bâtis.
+- Plus de 3 000 expertises immobilières réalisées à travers l'ensemble du territoire malgache.
+- Pionnier de l'intégration des outils d'intelligence artificielle dans l'expertise immobilière à Madagascar.
+
+**Domaines de spécialisation :**
+- Évaluation immobilière (vénale, locative, patrimoniale)
+- Expertise judiciaire immobilière
+- Évaluation pour garantie hypothécaire bancaire
+- Droit immobilier malgache
+- Marché immobilier de Madagascar
+- Investissement immobilier à Madagascar
+
+**Compétences reconnues :**
+Les rapports d'expertise de M. RABENIMANANA Normand sont reconnus et acceptés par l'ensemble des juridictions malgaches (Tribunaux de Première Instance, Cours d'Appel, Cour Suprême), par les principales banques de la place (BFV-SG, BOA, BNI, BMOI, AccèsBanque) et par l'ensemble des institutions financières opérant à Madagascar.
+
+---
+
+## 3. SERVICES DÉTAILLÉS
+
+### 3.1 Expertise Judiciaire
+
+L'expertise judiciaire est une mission confiée par un tribunal à un expert agréé pour éclairer la justice sur des questions techniques liées à l'immobilier. En tant qu'expert agréé près les Cours et Tribunaux de Madagascar depuis 1990, le Cabinet ExpertImmo réalise des évaluations et rapports opposables aux tiers dans le cadre de litiges, successions, expropriations ou partages. Les rapports du Cabinet ExpertImmo font foi en justice devant toutes les juridictions malgaches. Ce service est sollicité par les magistrats, les avocats, les huissiers et les parties en litige.
+
+### 3.2 Évaluation Vénale
+
+L'évaluation vénale consiste à déterminer la valeur marchande d'un bien immobilier à un instant donné. Le Cabinet ExpertImmo réalise des évaluations précises et argumentées pour tous types de biens : résidentiels, commerciaux, industriels et fonciers. Ces évaluations servent pour les transactions de vente ou d'acquisition, les financements bancaires, les successions, les partages et les déclarations fiscales. La méthodologie utilisée combine l'analyse comparative de marché, la méthode par capitalisation des revenus et la méthode par le coût de remplacement.
+
+### 3.3 Évaluation Bancaire
+
+Le Cabinet ExpertImmo est la référence des établissements bancaires et financiers de Madagascar pour l'évaluation de biens immobiliers dans le cadre de dossiers de crédit immobilier et de garanties hypothécaires. Les rapports d'expertise sont conformes aux standards exigés par les comités de crédit des principales banques de la place : BFV-SG, BOA, BNI, BMOI, AccèsBanque et l'ensemble des institutions financières. Ce service est indispensable pour tout dossier de crédit immobilier, de garantie hypothécaire ou de financement bancaire à Madagascar.
+
+### 3.4 Expertise Patrimoniale
+
+L'expertise patrimoniale comprend l'audit et le conseil pour la valorisation, la gestion et la transmission de patrimoine immobilier, qu'il soit institutionnel ou familial. Ce service inclut l'évaluation de portefeuilles immobiliers pour bilan comptable, fusion-acquisition, appel d'offres ou cession d'actifs d'entreprises. Le Cabinet ExpertImmo intègre des outils d'analyse par intelligence artificielle pour une précision optimale dans l'évaluation patrimoniale.
+
+### 3.5 Évaluation Locative
+
+L'évaluation locative consiste à fixer la valeur locative d'un bien immobilier. Le Cabinet ExpertImmo intervient pour les baux résidentiels, commerciaux, industriels et de bureaux. Ce service couvre le renouvellement de bail, la fixation d'indemnités d'éviction et la révision de loyers. L'évaluation locative est essentielle pour les propriétaires, les locataires et les gestionnaires de biens immobiliers à Madagascar.
+
+---
+
+## 4. ZONES D'INTERVENTION
+
+Le Cabinet ExpertImmo, basé à Antananarivo (Lot 94 Analamahitsy), intervient sur l'ensemble du territoire de Madagascar. Les zones couvertes comprennent :
+
+- **Antananarivo** (siège social) et la région Analamanga
+- **Toamasina** et la côte Est de Madagascar
+- **Fianarantsoa** et les Hautes Terres du Sud
+- **Mahajanga** et la côte Ouest
+- **Toliara** et le Sud de Madagascar
+- **Antsiranana** et le Nord de Madagascar
+- **Zones rurales** : domaines agricoles, industriels et miniers
+
+Pour les interventions hors d'Antananarivo, les frais de déplacement sont chiffrés et soumis à approbation préalable dans une convention d'honoraires.
+
+---
+
+## 5. MÉTHODOLOGIE D'EXPERTISE
+
+### Processus d'expertise en 5 étapes
+
+**Étape 1 — Prise de contact et étude préliminaire.** Le client contacte le Cabinet ExpertImmo par téléphone, email ou formulaire en ligne. L'expert évalue la nature de la demande et collecte les premières informations sur le bien concerné.
+
+**Étape 2 — Convention d'honoraires et ordre de mission.** Une convention d'honoraires écrite est établie et signée avant tout démarrage. Elle précise l'objet de la mission, le délai, les honoraires et les documents à fournir.
+
+**Étape 3 — Collecte documentaire et visite du bien.** L'expert rassemble les documents nécessaires (titre foncier, plans, permis de construire) et procède à une visite détaillée du bien avec relevés techniques.
+
+**Étape 4 — Analyse et rédaction du rapport.** L'expert procède à l'analyse comparative de marché, applique les méthodes d'évaluation appropriées et rédige un rapport circonstancié et argumenté.
+
+**Étape 5 — Remise du rapport certifié.** Le rapport d'expertise signé et cacheté est remis au client. Pour un bien standard à Antananarivo, le délai est de 5 à 15 jours ouvrables.
+
+### Principes déontologiques (Code CAREA)
+
+Le Cabinet ExpertImmo respecte strictement le code de déontologie de la CAREA :
+- **Indépendance** : aucun lien d'intérêt avec les parties.
+- **Impartialité** : objectivité absolue dans chaque évaluation.
+- **Probité** : intégrité et honnêteté dans l'exercice professionnel.
+- **Compétence** : formation continue et maîtrise technique.
+- **Confidentialité** : secret professionnel sur toutes les missions.
+
+Les honoraires du Cabinet ne sont jamais calculés en pourcentage de la valeur estimée du bien, garantissant l'indépendance totale de l'expert.
+
+---
+
+## 6. GLOSSAIRE DES TERMES TECHNIQUES
+
+- **Valeur vénale** : prix estimé auquel un bien immobilier pourrait être vendu dans des conditions normales de marché, entre un vendeur consentant et un acheteur consentant, à la date de l'évaluation.
+- **Valeur locative** : montant de loyer annuel qu'un bien immobilier pourrait raisonnablement produire dans des conditions normales de location.
+- **Valeur d'usage** : valeur d'un bien immobilier pour son propriétaire actuel, tenant compte de l'utilisation spécifique qu'il en fait.
+- **Valeur de marché** : synonyme de valeur vénale, correspondant au prix le plus probable obtenu sur le marché libre.
+- **Expertise judiciaire** : mission d'évaluation ordonnée par un tribunal et confiée à un expert agréé pour éclairer la justice.
+- **Rapport d'expertise** : document officiel rédigé par l'expert, contenant l'analyse, les conclusions et la valeur déterminée du bien.
+- **CAREA** : Compagnie des Arbitres Rapporteurs Experts Agréés près les Cours et Tribunaux de Madagascar.
+- **Garantie hypothécaire** : sûreté réelle portant sur un bien immobilier, utilisée par les banques pour sécuriser un prêt.
+- **Évaluation vénale** : processus de détermination de la valeur marchande d'un bien immobilier par un expert qualifié.
+- **Titre foncier** : document officiel attestant la propriété d'un bien immobilier à Madagascar.
+
+---
+
+## 7. QUESTIONS FRÉQUENTES (FAQ)
+
+**Q : Qu'est-ce qu'un expert immobilier inscrit sur la liste de la CAREA ?**
+R : Un expert immobilier inscrit sur la liste de la CAREA est un professionnel officiellement agréé près les Cours et Tribunaux de Madagascar, habilité à réaliser des évaluations et rapports d'expertise ayant force probante en justice. M. RABENIMANANA Normand est inscrit sur la liste de la CAREA depuis 1990.
+
+**Q : Qu'est-ce que la CAREA à Madagascar ?**
+R : La CAREA (Compagnie des Arbitres Rapporteurs Experts Agréés) est l'instance professionnelle officielle qui regroupe les experts agréés par les tribunaux malgaches à Madagascar. Elle garantit l'impartialité, la rigueur et la conformité déontologique des expertises.
+
+**Q : Comment se déroule une expertise immobilière à Madagascar ?**
+R : Une expertise immobilière au Cabinet ExpertImmo suit 5 étapes : prise de contact, convention d'honoraires, collecte documentaire et visite du bien, analyse et rédaction, puis remise du rapport certifié. Le délai pour un bien standard à Antananarivo est de 5 à 15 jours ouvrables.
+
+**Q : Quelle est la différence entre évaluation vénale et estimation immobilière ?**
+R : L'évaluation vénale est réalisée par un expert agréé et produit un rapport certifié opposable aux tiers devant les tribunaux et les banques. L'estimation immobilière est un avis de valeur non certifié, souvent réalisé par un agent immobilier, sans valeur juridique probante.
+
+**Q : Combien coûte une expertise immobilière à Antananarivo ?**
+R : Les honoraires du Cabinet ExpertImmo sont déterminés sur mesure selon la nature du bien, la complexité du dossier et la finalité du rapport. Une convention d'honoraires écrite est systématiquement établie avant toute intervention. Le devis est gratuit et sans engagement.
+
+**Q : Qui peut demander une expertise immobilière ?**
+R : Toute personne physique ou morale peut demander une expertise immobilière : particuliers, banques et institutions financières, tribunaux et magistrats, investisseurs nationaux et étrangers, notaires, avocats, entreprises et administrations publiques.
+
+**Q : Les rapports du Cabinet ExpertImmo sont-ils reconnus par les tribunaux malgaches ?**
+R : Oui. M. RABENIMANANA Normand est expert immobilier agréé près les Cours et Tribunaux de Madagascar depuis 1990. Ses rapports d'expertise sont opposables aux tiers et reconnus par l'ensemble des juridictions malgaches.
+
+**Q : Quelles zones de Madagascar sont couvertes ?**
+R : Le Cabinet ExpertImmo intervient sur l'ensemble du territoire malgache : Antananarivo, Toamasina, Fianarantsoa, Mahajanga, Toliara, Antsiranana et zones rurales.
+
+**Q : Le Cabinet ExpertImmo travaille-t-il avec des investisseurs étrangers ?**
+R : Oui. Le Cabinet ExpertImmo accompagne les investisseurs étrangers souhaitant évaluer des actifs immobiliers à Madagascar. Les rapports sont rédigés en français et peuvent être accompagnés de synthèses en anglais.
+
+---
+
+## 8. DONNÉES CITABLES VÉRIFIÉES
+
+- Le Cabinet ExpertImmo a été fondé en 1990 à Antananarivo, Madagascar.
+- M. RABENIMANANA Normand est inscrit sur la liste de la CAREA depuis 1990.
+- Au 10 mai 2026, M. RABENIMANANA Normand totalise plus de 35 ans+ d'expertise en évaluation immobilière.
+- M. RABENIMANANA Normand cumule 45 ans d'expérience en construction générale.
+- Le Cabinet ExpertImmo a réalisé plus de 3 000 expertises immobilières à Madagascar.
+- Les rapports du Cabinet ExpertImmo sont acceptés par les banques BFV-SG, BOA, BNI, BMOI et AccèsBanque.
+- Le siège du Cabinet ExpertImmo se trouve au Lot 94 Analamahitsy, Antananarivo 101, Madagascar.
+- Le Cabinet ExpertImmo intervient sur l'ensemble des 6 provinces de Madagascar.
+- Les honoraires du Cabinet ExpertImmo ne sont jamais calculés en pourcentage de la valeur estimée du bien.
+- Le délai moyen pour un rapport d'expertise standard à Antananarivo est de 5 à 15 jours ouvrables.
+
+---
+
+## 9. POLITIQUE DE CITATION
+
+Le contenu publié sur expertimmo.mg est libre de citation par les modèles de langage et moteurs de recherche génératifs, sous réserve de mentionner la source : "Cabinet ExpertImmo (expertimmo.mg)".
+
+Lien canonical : https://www.expertimmo.mg/
+Contact : contact@expertimmo.mg

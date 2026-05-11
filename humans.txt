@@ -1,0 +1,30 @@
+/* humans.txt — Cabinet ExpertImmo
+   Inspiré de humanstxt.org */
+
+/* ÉQUIPE */
+  Expert principal: RABENIMANANA Normand
+  Qualité: Expert Immobilier Assermenté — Arbitre Rapporteur Expert Agréé
+  Organisme professionnel: CAREA (Compagnie des Arbitres Rapporteurs Experts Agréés)
+  Membre CAREA depuis: 1990
+  Site: https://www.expertimmo.mg
+  Contact: contact@expertimmo.mg
+  Localisation: Antananarivo, Madagascar
+
+/* DÉVELOPPEMENT */
+  Conçu et développé par: [Lalason RABENIMANANA]
+  Hébergeur: Tranokala — https://tranokala.pro
+  Langues: Français, Anglais (en cours)
+
+/* TECHNOLOGIES */
+  HTML5, CSS3 (Vanilla), JavaScript ES6+
+  Polices: Cormorant Garamond, DM Sans (Google Fonts)
+  Schema.org JSON-LD, Open Graph, Twitter Cards
+  Format images: AVIF, WebP
+  Performance: Core Web Vitals optimisé
+
+/* INFORMATIONS LÉGALES */
+  Droit applicable: Loi malgache
+  Juridiction compétente: Tribunaux d'Antananarivo
+  Données personnelles: Loi n°2014-038 (CMIL Madagascar)
+  Déontologie: Code de déontologie CAREA
+  Dernière mise à jour: 2026-05-10

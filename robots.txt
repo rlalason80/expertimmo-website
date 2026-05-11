@@ -1,0 +1,47 @@
+# ═══ Cabinet ExpertImmo — robots.txt ═══
+# https://www.expertimmo.mg/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-policy.md
+Allow: /articles/
+Disallow: /backlink-strategy.md
+
+# Crawl-delay pour les bots agressifs
+# Crawl-delay: 1
+
+# ═══ SITEMAP ═══
+Sitemap: https://www.expertimmo.mg/sitemap.xml
+
+# ═══ LLM & AI CRAWLERS — ACCÈS AUTORISÉ ═══
+# Les fichiers llms.txt et llms-full.txt sont disponibles
+# pour l'ingestion par les modèles de langage.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
