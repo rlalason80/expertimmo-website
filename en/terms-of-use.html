@@ -96,20 +96,6 @@
       .nav-links { display: none; }
     }
     
-    .lang-switcher {
-      font-size: 0.85rem;
-      font-weight: 600;
-      font-family: var(--font-body);
-      color: var(--primary-light);
-    }
-    .lang-switcher a {
-      color: var(--text-muted);
-      padding: 0 4px;
-    }
-    .lang-switcher a.active {
-      color: var(--accent);
-      pointer-events: none;
-    }
     /* ─── WHATSAPP FLOATING BUTTON ─── */
     .whatsapp-float {
       position: fixed;
@@ -138,20 +124,17 @@
     <a href="../index.html" class="logo-container">
       <div>
         <span class="logo-text">ExpertImmo</span>
-        <span class="logo-carea" data-i18n="nav.logo_sub">Membre CAREA · Agréé depuis 1990</span>
+        <span class="logo-carea">Membre CAREA · Agréé depuis 1990</span>
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="../index.html#accueil" data-i18n="nav.home">Accueil</a></li>
-      <li><a href="../index.html#a-propos" data-i18n="nav.about">Le Cabinet</a></li>
-      <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
-      <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="../index.html#accueil">Accueil</a></li>
+      <li><a href="../index.html#a-propos">Le Cabinet</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
     </ul>
     <div style="display:flex; align-items:center; gap: 1rem;">
-      <div class="lang-switcher">
-        <a href="#" class="lang-btn active" data-lang="fr">FR</a> | 
-        <a href="#" class="lang-btn" data-lang="en">EN</a>
-      </div>
+      <div class="lang-switcher-mount" data-lang-current="en"></div>
     </div>
   </nav>
 
@@ -280,47 +263,43 @@
     <div class="footer-grid">
       <div>
         <span class="footer-logo">ExpertImmo</span>
-        <div class="footer-carea" data-i18n="nav.logo_sub">Membre CAREA · Agréé depuis 1990</div>
-        <p class="footer-desc" data-i18n="footer.desc">
+        <div class="footer-carea">Membre CAREA · Agréé depuis 1990</div>
+        <p class="footer-desc">
           Cabinet d'expertise immobilière fondé en 1990 par M. RABENIMANANA Normand.<br>
           Expert Immobilier Agréé près les Cours et Tribunaux de Madagascar.<br>
           Membre de la CAREA — Compagnie des Arbitres Rapporteurs Experts Agréés.
         </p>
       </div>
       <div>
-        <h4 class="footer-title" data-i18n="footer.nav">Navigation</h4>
+        <h4 class="footer-title">Navigation</h4>
         <ul class="footer-links">
-          <li><a href="../index.html#accueil" data-i18n="nav.home">Accueil</a></li>
-          <li><a href="../index.html#a-propos" data-i18n="nav.about">Le Cabinet</a></li>
-          <li><a href="../index.html#services" data-i18n="nav.services">Nos Services</a></li>
-          <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="../index.html#accueil">Accueil</a></li>
+          <li><a href="../index.html#a-propos">Le Cabinet</a></li>
+          <li><a href="../index.html#services">Nos Services</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="footer-title" data-i18n="footer.legal">Informations Légales</h4>
+        <h4 class="footer-title">Informations Légales</h4>
         <ul class="footer-links">
-          <li><a href="legal-notice.html" data-i18n="footer.l1">Mentions Légales</a></li>
-          <li><a href="terms-of-use.html" data-i18n="footer.l2">Conditions d'Utilisation</a></li>
-          <li><a href="privacy-policy.html" data-i18n="footer.l3">Politique de Confidentialité</a></li>
-          <li><a href="fees.html" data-i18n="footer.l4">Honoraires</a></li>
+          <li><a href="legal-notice.html">Mentions Légales</a></li>
+          <li><a href="terms-of-use.html">Conditions d'Utilisation</a></li>
+          <li><a href="privacy-policy.html">Politique de Confidentialité</a></li>
+          <li><a href="fees.html">Honoraires</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 0.5rem;">
-        <span data-i18n="footer.copy">&copy; 2026 ExpertImmo — Tous droits réservés.</span>
-        <span data-i18n="footer.bottom">Cabinet RABENIMANANA Normand · Expert Immobilier Agréé · Membre CAREA</span>
+        <span>&copy; 2026 ExpertImmo — Tous droits réservés.</span>
+        <span>Cabinet RABENIMANANA Normand · Expert Immobilier Agréé · Membre CAREA</span>
       </div>
       <div style="width: 100%; text-align: center; margin-top: 1rem; font-size: 0.7rem; color: rgba(255, 255, 255, 0.3);">
         Expert immobilier inscrit sur la liste de la CAREA depuis 1990. Toutes les expertises sont menées dans le respect du code de déontologie de la CAREA : indépendance, impartialité, probité, compétence et confidentialité.
       </div>
     </div>
   </footer>
-    <script>
-    (function(){ sessionStorage.setItem('expertImmoLang','en'); try{localStorage.setItem('expertimmo_lang_pref','en')}catch(e){} })();
-  </script>
-  <script src="../js/i18n.js"></script>
-  <script src="../js/language-switcher.js"></script>
+    <script src="../js/language-switcher.js"></script>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/261340396229?text=Hello,%20I%20would%20like%20a%20real%20estate%20appraisal"

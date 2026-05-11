@@ -90,10 +90,7 @@
     .footer{background:var(--primary-light);color:#fff;padding:3rem 5% 1.5rem}
     .footer-bottom{text-align:center;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4);font-size:.8rem}
     @media(max-width:900px){.nav-links{display:none}.article-content{padding:2rem 5% 3rem}}
-      .lang-switcher { font-size: 0.85rem; font-weight: 600; font-family: var(--font-body); color: var(--primary-light); }
-    .lang-switcher a { color: var(--text-muted); padding: 0 4px; }
-    .lang-switcher a.active { color: var(--accent); pointer-events: none; }
-  </style>
+      </style>
 </head>
 <body>
   <nav class="navbar">
@@ -107,10 +104,7 @@
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
       <div style="display:flex; align-items:center; gap: 1rem;">
-      <div class="lang-switcher">
-        <a href="#" class="lang-btn active" data-lang="fr">FR</a> | 
-        <a href="#" class="lang-btn" data-lang="en">EN</a>
-      </div>
+      <div class="lang-switcher-mount" data-lang-current="fr"></div>
     </div>
   </nav>
 
@@ -197,7 +191,6 @@
       <span>&copy; 2026 Cabinet ExpertImmo — Tous droits réservés · Membre CAREA depuis 1990</span>
     </div>
   </footer>
-<script src="../js/i18n.js"></script>
-  <script src="../js/language-switcher.js"></script>
+<script src="../js/language-switcher.js"></script>
 </body>
 </html>
