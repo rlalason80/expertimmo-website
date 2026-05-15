@@ -230,6 +230,14 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .deonto-block h3 { font-family: var(--font-sc); font-weight: 600; color: var(--anthracite); letter-spacing: 0.1em; font-size: 1rem; margin: 1rem 0 0.75rem; }
 .deonto-block p { font-family: var(--font-body); font-weight: 400; color: var(--anthracite); font-size: 0.9375rem; line-height: 1.7; }
 
+/* === STATS BANNER === */
+.stats-banner { background-color: var(--navy-deep); padding: 4rem 0; color: var(--ivory); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stats-col { text-align: center; position: relative; padding: 0 1rem; }
+.stats-col + .stats-col::before { content: ''; position: absolute; left: 0; top: 15%; height: 70%; width: 1px; background-color: var(--gold-pale); opacity: 0.4; }
+.stats-value { font-family: var(--font-heading); font-weight: 500; color: var(--gold-pale); font-size: 3rem; line-height: 1.1; display: block; }
+.stats-label { font-family: var(--font-sc); font-weight: 500; color: var(--ivory); font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.5rem; display: block; }
+
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
   .main-nav { display: none; }
@@ -241,6 +249,8 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
   .domain-card { flex: 0 0 360px; }
   .methodo-grid { grid-template-columns: 1fr; gap: 3rem; }
   .deonto-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem 0; }
+  .stats-col + .stats-col::before { display: none; }
 }
 @media (max-width: 768px) {
   .inst-banner-grid { grid-template-columns: repeat(2, 1fr); }
