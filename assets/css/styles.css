@@ -122,8 +122,10 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .fade-in.is-visible { opacity: 1; transform: translateY(0); }
 
 /* === HERO === */
-.hero { background-color: var(--navy-deep); min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem var(--gutter); }
-.hero-content { max-width: 900px; }
+.hero { background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%); min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem var(--gutter); position: relative; overflow: hidden; }
+.hero-content { max-width: 900px; position: relative; z-index: 2; }
+.hero-silhouette { position: absolute; bottom: 0; left: 0; width: 100%; height: auto; pointer-events: none; z-index: 1; }
+.hero-line { position: absolute; bottom: 200px; left: 0; width: 100%; height: 0.5px; background-color: var(--gold-pale); opacity: 0.4; z-index: 1; }
 .hero h1 { color: var(--ivory); margin: 1.5rem 0; }
 .hero-subtitle { font-family: var(--font-heading); font-weight: 400; font-style: italic; color: var(--gold-pale); font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.4; margin-bottom: 1.5rem; }
 .hero-intro { font-family: var(--font-body); font-weight: 400; color: var(--ivory); font-size: 1.0625rem; line-height: 1.75; max-width: 720px; margin: 0 auto 2.5rem; }
@@ -135,6 +137,7 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .inst-banner-col { text-align: center; padding: 1.5rem; position: relative; }
 .inst-banner-col + .inst-banner-col::before { content: ''; position: absolute; left: 0; top: 15%; height: 70%; width: 1px; background-color: var(--gold-pale); }
 .inst-banner-text { font-family: var(--font-sc); font-weight: 500; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--anthracite); }
+.inst-icon { width: 40px; height: 40px; margin: 0 auto 1.5rem; display: block; stroke: var(--gold-muted); }
 
 /* === LE CABINET === */
 .cabinet-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 4rem; align-items: start; }
@@ -151,6 +154,7 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .domain-card p { font-family: var(--font-body); font-weight: 400; color: var(--ivory); font-size: 0.9375rem; line-height: 1.65; flex: 1; }
 .domain-num { font-family: var(--font-heading); font-weight: 500; color: var(--gold-pale); font-size: 1.5rem; opacity: 0.7; display: block; margin-bottom: 0.75rem; }
 .domain-tag { font-family: var(--font-sc); font-weight: 500; color: var(--gold-muted); letter-spacing: 0.12em; font-size: 0.75rem; margin-top: 1rem; }
+.domain-icon { width: 32px; height: 32px; margin-bottom: 1.5rem; stroke: var(--gold-pale); fill: none; }
 .slider-arrow { width: 40px; height: 40px; border: 1px solid var(--gold-pale); border-radius: 50%; color: var(--gold-pale); display: flex; align-items: center; justify-content: center; position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; opacity: 0.5; transition: opacity 0.3s; background: transparent; }
 .slider-arrow:hover { opacity: 1; }
 .slider-arrow--prev { left: 0; }
