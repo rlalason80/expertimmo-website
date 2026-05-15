@@ -196,6 +196,15 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .contact-form-note { font-family: var(--font-heading); font-weight: 400; font-style: italic; color: var(--gold-muted); font-size: 0.8125rem; text-align: center; margin-top: 2rem; }
 .field-error { border-bottom-color: var(--bordeaux-rare) !important; }
 
+/* === STEPS TIMELINE === */
+.steps-timeline { display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-top: 2rem; }
+.steps-timeline::before { content: ''; position: absolute; top: calc(2rem + 32px); left: 64px; right: 64px; height: 1px; background-color: var(--gold-pale); }
+.step { flex: 1; text-align: center; position: relative; max-width: 220px; }
+.step-circle { width: 64px; height: 64px; border: 2px solid var(--gold-pale); border-radius: 50%; background-color: var(--navy-deep); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; position: relative; z-index: 1; }
+.step-circle span { font-family: var(--font-heading); font-weight: 500; color: var(--gold-pale); font-size: 1.5rem; }
+.step h4 { font-family: var(--font-sc); font-weight: 600; color: var(--ivory); letter-spacing: 0.1em; font-size: 0.875rem; margin-bottom: 0.75rem; }
+.step p { font-family: var(--font-body); font-weight: 400; color: var(--ivory); font-size: 0.9375rem; line-height: 1.6; max-width: 200px; margin: 0 auto; }
+
 /* === METHODOLOGY === */
 .section-methodo { }
 .methodo-top { background-color: var(--ivory); padding: 8rem 0 5rem; }
@@ -233,6 +242,11 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
   .slider-arrow { top: auto; bottom: 0; transform: none; width: 36px; height: 36px; }
   .methodo-refs { grid-template-columns: 1fr; gap: 1.5rem; }
   .methodo-ref + .methodo-ref::before { display: none; }
+  .steps-timeline { flex-direction: column; align-items: flex-start; gap: 2.5rem; padding-left: 3rem; }
+  .steps-timeline::before { top: 0; bottom: 0; left: calc(3rem + 32px - 0.5px); right: auto; width: 1px; height: auto; }
+  .step { text-align: left; max-width: none; display: flex; gap: 1.5rem; align-items: flex-start; }
+  .step-circle { margin: 0; flex-shrink: 0; }
+  .step p { max-width: none; margin: 0; }
 }
 @media (max-width: 640px) {
   .section { padding: 4rem 0; }
