@@ -206,7 +206,6 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .step p { font-family: var(--font-body); font-weight: 400; color: var(--ivory); font-size: 0.9375rem; line-height: 1.6; max-width: 200px; margin: 0 auto; }
 
 /* === METHODOLOGY === */
-.section-methodo { }
 .methodo-top { background-color: var(--ivory); padding: 8rem 0 5rem; }
 .methodo-h2 { font-size: clamp(2.25rem, 4.5vw, 3.25rem); line-height: 1.15; color: var(--anthracite); }
 .methodo-intro { font-family: var(--font-heading); font-weight: 400; font-style: italic; color: var(--anthracite); font-size: 1.125rem; line-height: 1.65; max-width: 760px; }
@@ -224,6 +223,13 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
 .methodo-ref h4 { font-family: var(--font-sc); font-weight: 600; color: var(--gold-pale); letter-spacing: 0.12em; font-size: 1rem; margin-bottom: 0.5rem; }
 .methodo-ref span { font-family: var(--font-body); font-weight: 300; font-style: italic; color: var(--ivory); font-size: 0.875rem; }
 
+/* === DEONTOLOGY === */
+.deonto-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5rem; margin-top: 4rem; }
+.deonto-block { display: flex; flex-direction: column; }
+.deonto-num { font-family: var(--font-heading); font-weight: 500; color: var(--gold-muted); font-size: 2.5rem; line-height: 1; margin-bottom: 0.5rem; }
+.deonto-block h3 { font-family: var(--font-sc); font-weight: 600; color: var(--anthracite); letter-spacing: 0.1em; font-size: 1rem; margin: 1rem 0 0.75rem; }
+.deonto-block p { font-family: var(--font-body); font-weight: 400; color: var(--anthracite); font-size: 0.9375rem; line-height: 1.7; }
+
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
   .main-nav { display: none; }
@@ -234,6 +240,7 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
   .contact-coords { grid-template-columns: repeat(2, 1fr); }
   .domain-card { flex: 0 0 360px; }
   .methodo-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .deonto-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .inst-banner-grid { grid-template-columns: repeat(2, 1fr); }
@@ -247,6 +254,7 @@ mark { background-color: var(--ivory-warm); border: 1px dashed var(--gold-pale);
   .step { text-align: left; max-width: none; display: flex; gap: 1.5rem; align-items: flex-start; }
   .step-circle { margin: 0; flex-shrink: 0; }
   .step p { max-width: none; margin: 0; }
+  .deonto-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
 @media (max-width: 640px) {
   .section { padding: 4rem 0; }
