@@ -1,0 +1,9 @@
+# Interdit l'accès web au dossier des logs
+# Les logs contiennent des données personnelles des soumissions du formulaire
+# et ne doivent jamais être accessibles publiquement.
+
+Order Deny,Allow
+Deny from all
+
+# Apache 2.4+
+Require all denied

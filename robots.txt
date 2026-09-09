@@ -1,47 +1,48 @@
-# ═══ Cabinet ExpertImmo — robots.txt ═══
-# https://www.expertimmo.mg/robots.txt
+# ============================================================
+# Cabinet d'expertise immobilière ExpertImmo | RABENIMANANA Normand
+# https://www.expertimmo.mg/
+# robots.txt — Directives pour les moteurs de recherche et LLM
+# ============================================================
 
-User-agent: *
+# ── Moteurs de recherche classiques ──
+User-agent: Googlebot
 Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /ai-policy.md
-Allow: /articles/
-Disallow: /backlink-strategy.md
 
-# Crawl-delay pour les bots agressifs
-# Crawl-delay: 1
+User-agent: Bingbot
+Allow: /
 
-# ═══ SITEMAP ═══
-Sitemap: https://www.expertimmo.mg/sitemap.xml
+User-agent: Slurp
+Allow: /
 
-# ═══ LLM & AI CRAWLERS — ACCÈS AUTORISÉ ═══
-# Les fichiers llms.txt et llms-full.txt sont disponibles
-# pour l'ingestion par les modèles de langage.
-
+# ── Crawlers IA / LLM (AEO + GEO) ──
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Bytespider
+User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: cohere-ai
 Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# ── Règle générale ──
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /en/404.html
+# /assets/ doit rester accessible aux crawlers sociaux pour récupérer l'OG image
+# (LinkedIn, Facebook, WhatsApp, Twitter/X, Slack, Telegram, etc.)
+
+# ── Sitemap ──
+Sitemap: https://www.expertimmo.mg/sitemap.xml
