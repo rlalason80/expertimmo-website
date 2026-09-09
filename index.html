@@ -1,489 +1,1437 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-MG" data-alt-lang="en" data-alt-href="en/">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cabinet ExpertImmo — Expertise en Bâtiments et Biens Immobiliers à Madagascar</title>
-  <meta name="description" content="Cabinet d'expertise en bâtiments et biens immobiliers fondé en 1990 à Antananarivo. M. RABENIMANANA Normand, Expert Agréé près les Cours et Tribunaux de Madagascar, membre de la CAREA.">
-  <meta name="author" content="Cabinet RABENIMANANA Normand — ExpertImmo">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- ═══ SEO TITLE ═══ -->
+
+
+  <!-- ═══ META SEO ═══ -->
+  <meta name="description"
+    content="Expert en Bâtiments et Biens immobiliers agréé près les Cours et Tribunaux de Madagascar depuis 1990. Évaluation vénale, expertise judiciaire, garantie hypothécaire. Membre CAREA. Contactez-nous à Antananarivo.">
+  <meta name="keywords"
+    content="expert en Bâtiments et Biens immobiliers Madagascar, évaluation vénale Antananarivo, expertise immobilière CAREA, expert assermenté Madagascar, RABENIMANANA Normand, estimation immobilière Antananarivo, expertise judiciaire immobilière Madagascar, valeur vénale bien immobilier Madagascar, arbitre rapporteur expert agréé Cours Tribunaux Madagascar">
+  <meta name="author" content="Cabinet ExpertImmo | RABENIMANANA Normand">
   <link rel="canonical" href="https://www.expertimmo.mg/">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- ═ ═ ═ HREFLANG ═ ═ ═ -->
+  <link rel="alternate" hreflang="fr-MG" href="https://www.expertimmo.mg/">
+  <link rel="alternate" hreflang="fr" href="https://www.expertimmo.mg/">
+  <link rel="alternate" hreflang="en" href="https://www.expertimmo.mg/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.expertimmo.mg/">
+
+  <!-- ═══ BILINGUE FR/EN — préférence de langue + sélecteur Globe (chargé tôt pour éviter le flash) ═══ -->
+  <script>
+  (function () {
+    var docEl = document.documentElement;
+    try { if (sessionStorage.getItem('restoreScroll') !== null) { docEl.style.visibility = 'hidden'; } } catch(e){}
+    var cur = (docEl.lang || 'fr').slice(0, 2).toLowerCase();
+    // 1) Honore le choix de langue mémorisé : redirige vers la page équivalente
+    try {
+      var pref = localStorage.getItem('lang');
+      var altLang = docEl.getAttribute('data-alt-lang');
+      var altHref = docEl.getAttribute('data-alt-href');
+      if (pref && altHref && pref === altLang && pref !== cur) {
+        location.replace(altHref);
+        return;
+      }
+    } catch (e) {}
+    // 2) Sélecteur de langue : ouverture/fermeture du menu + mémorisation du choix
+    window.toggleLang = function (e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      var s = document.getElementById('langSwitcher');
+      if (!s) return;
+      var open = s.classList.toggle('open');
+      var btn = s.querySelector('.lang-toggle');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    window.setLang = function (l) {
+      try {
+        localStorage.setItem('lang', l);
+        sessionStorage.setItem('restoreScroll', window.scrollY);
+      } catch (e) {}
+      return true; // laisse le lien suivre sa cible
+    };
+
+    var scrollVal = null;
+    try { scrollVal = sessionStorage.getItem('restoreScroll'); } catch (e) {}
+
+    function doScroll() {
+      if (scrollVal !== null) {
+        window.scrollTo({ top: parseInt(scrollVal, 10), behavior: 'instant' });
+        document.documentElement.style.visibility = '';
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      doScroll();
+    });
+
+    window.addEventListener("load", function() {
+      if (scrollVal !== null) {
+        doScroll();
+        try { sessionStorage.removeItem('restoreScroll'); } catch(e){}
+      }
+    });
+    document.addEventListener('click', function (e) {
+      var s = document.getElementById('langSwitcher');
+      if (s && !s.contains(e.target)) {
+        s.classList.remove('open');
+        var btn = s.querySelector('.lang-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+  // (a) Précharge la page de l'autre langue en arrière-plan -> bascule quasi instantanée
+  (function () {
+    var alt = document.querySelector('.lang-option:not(.active)');
+    if (alt && alt.getAttribute('href')) {
+      var l = document.createElement('link');
+      l.rel = 'prefetch';
+      l.href = alt.getAttribute('href');
+      document.head.appendChild(l);
+    }
+  })();
+
+  // (b) Conserve la section en cours quand on change de langue (ID FR/EN identiques)
+  document.addEventListener('click', function (e) {
+    var opt = e.target.closest('.lang-option');
+    if (!opt || opt.classList.contains('active')) return;
+    var sections = document.querySelectorAll('section[id]');
+    var current = '';
+    var mid = window.scrollY + window.innerHeight * 0.35;
+    sections.forEach(function (s) { if (s.offsetTop <= mid) current = s.id; });
+    if (current) {
+      var base = opt.getAttribute('href').split('#')[0];
+      opt.setAttribute('href', base + '#' + current);
+    }
+  });
+
+  })();
+  </script>
+
+  <!-- ═══ OPEN GRAPH (LinkedIn, Facebook, WhatsApp) ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.expertimmo.mg/">
+  <meta property="og:title" content="Cabinet ExpertImmo | RABENIMANANA Normand — Expert en Bâtiments et Biens immobiliers Madagascar">
+  <meta property="og:description"
+    content="Cabinet d'expertise immobilière agréé depuis 1990. Expert assermenté près les Cours et Tribunaux. Évaluation vénale, expertise judiciaire, garantie hypothécaire à Antananarivo, Madagascar.">
+  <meta property="og:image" content="https://www.expertimmo.mg/assets/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cabinet ExpertImmo | RABENIMANANA Normand — Expert en Bâtiments et Biens immobiliers Agréé CAREA, Antananarivo Madagascar">
+  <meta property="og:locale" content="fr_MG">
+  <meta property="og:locale:alternate" content="en_MG">
+
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cabinet ExpertImmo | RABENIMANANA Normand — Expert en Bâtiments et Biens immobiliers Madagascar">
+  <meta name="twitter:description"
+    content="Expert en Bâtiments et Biens immobiliers agréé près les Cours et Tribunaux de Madagascar depuis 1990. Évaluation vénale, expertise judiciaire CAREA.">
+  <meta name="twitter:image" content="https://www.expertimmo.mg/assets/og-image.webp">
+  <meta name="twitter:image:alt" content="Cabinet ExpertImmo | RABENIMANANA Normand — Antananarivo Madagascar">
+
+  <!-- ═══ SCHEMA.ORG — DONNÉES STRUCTURÉES AEO ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "https://www.expertimmo.mg/#cabinet",
+        "name": "Cabinet ExpertImmo",
+        "legalName": "Cabinet d'expertise immobilière ExpertImmo | RABENIMANANA Normand",
+        "alternateName": "ExpertImmo Madagascar",
+        "description": "Cabinet d'expertise immobilière fondé en 1990 par M. RABENIMANANA Normand, Expert en Bâtiments et Biens immobiliers Agréé près les Cours et Tribunaux de Madagascar, inscrit à la CAREA (Compagnie des Arbitres Rapporteurs et Experts Agréés). Le Cabinet propose des services d'évaluation vénale, d'expertise judiciaire immobilière, d'évaluation locative et d'expertise patrimoniale pour particuliers, banques et institutions financières à Madagascar.",
+        "url": "https://www.expertimmo.mg",
+        "telephone": ["+261320779263", "+261340396229"],
+        "email": "contact@expertimmo.mg",
+        "foundingDate": "1990",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Lot 94 Analamahitsy",
+          "addressLocality": "Antananarivo",
+          "postalCode": "101",
+          "addressRegion": "Analamanga",
+          "addressCountry": "MG"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-18.8707565",
+          "longitude": "47.5464621"
+        },
+        "hasMap": "https://www.google.com/maps?cid=18374368972118443577",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Madagascar"
+        },
+        "knowsAbout": [
+          "Évaluation immobilière",
+          "Expertise judiciaire immobilière Madagascar",
+          "Évaluation vénale Antananarivo",
+          "Garantie hypothécaire pour banques Madagascar",
+          "Évaluation locative",
+          "Expertise patrimoniale",
+          "Valeur vénale bien immobilier Madagascar",
+          "Droit immobilier malagasy",
+          "Marché immobilier Madagascar"
+        ],
+        "serviceType": "Expertise immobilière",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services d'expertise immobilière",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Évaluation vénale", "description": "Détermination de la valeur marchande d'un bien immobilier établie par un expert inscrit à la CAREA, recevable par les banques et tribunaux malagasy."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Expertise judiciaire immobilière", "description": "Rapport d'expertise ordonné par une juridiction ou amiable, signé par un expert agréé près les Cours et Tribunaux de Madagascar."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Évaluation bancaire et garantie hypothécaire", "description": "Évaluation vénale conforme aux exigences des comités de crédit des établissements bancaires malagasy."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Expertise patrimoniale", "description": "Évaluation des actifs immobiliers pour successions, donations-partages et transmissions patrimoniales."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Évaluation locative", "description": "Fixation de la valeur locative pour baux résidentiels, commerciaux, industriels et renouvellements de bail."}}
+          ]
+        },
+        "priceRange": "Sur devis — Convention préalable obligatoire",
+        "currenciesAccepted": "MGA",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/rabenimanana-normand/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BJJfHRaphTD2gfACm0H37VQ%3D%3D",
+          "https://www.google.com/maps?cid=18374368972118443577"
+        ],
+        "founder": { "@id": "https://www.expertimmo.mg/#expert" },
+        "employee": { "@id": "https://www.expertimmo.mg/#expert" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.expertimmo.mg/#expert",
+        "name": "RABENIMANANA Normand",
+        "givenName": "Normand",
+        "familyName": "RABENIMANANA",
+        "jobTitle": "Expert en Bâtiments et Biens immobiliers Assermenté — Arbitre Rapporteur Expert Agréé près les Cours et Tribunaux de Madagascar",
+        "worksFor": { "@id": "https://www.expertimmo.mg/#cabinet" },
+        "description": "M. RABENIMANANA Normand est Expert en Bâtiments et Biens immobiliers agréé près les Cours et Tribunaux de Madagascar depuis 1990, inscrit à la CAREA. Il totalise plus de 35 ans d'expertise en évaluation immobilière à Madagascar et 45 ans d'expérience en construction générale, avec plus de 1 500 expertises immobilières réalisées à travers le territoire malagasy.",
+        "image": "https://www.expertimmo.mg/assets/img/Founder_Profil_560w.webp",
+        "url": "https://www.expertimmo.mg/#a-propos",
+        "memberOf": {
+          "@type": "Organization",
+          "@id": "https://www.expertimmo.mg/#carea",
+          "name": "CAREA — Compagnie des Arbitres Rapporteurs et Experts Agréés"
+        },
+        "knowsAbout": [
+          "expertise immobilière",
+          "évaluation vénale",
+          "estimation immobilière",
+          "expertise judiciaire",
+          "marché immobilier malagasy",
+          "investissement immobilier Madagascar",
+          "évaluation locative",
+          "expertise patrimoniale",
+          "garantie hypothécaire",
+          "droit immobilier malagasy",
+          "construction générale"
+        ],
+        "nationality": { "@type": "Country", "name": "Madagascar" },
+        "sameAs": [
+          "https://www.linkedin.com/in/rabenimanana-normand/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.expertimmo.mg/#carea",
+        "name": "CAREA — Compagnie des Arbitres Rapporteurs et Experts Agréés",
+        "description": "Instance professionnelle officielle regroupant les experts agréés par les tribunaux malagasy, garant de l'impartialité et de la rigueur des expertises judiciaires et amiables à Madagascar.",
+        "url": "https://www.expertimmo.mg/#carea"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.expertimmo.mg/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce qu'un expert en Bâtiments et Biens immobiliers agréé près les Cours et Tribunaux à Madagascar ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un expert agréé près les Cours et Tribunaux est un professionnel officiellement reconnu par le système judiciaire malagasy pour produire des évaluations et rapports d'expertise ayant force probante en justice. M. RABENIMANANA Normand est inscrit à la CAREA depuis 1990 ; ses rapports sont dotés de la force probante reconnue à cette qualité, leur portée à l'égard des tiers s'appréciant selon le droit commun."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que la CAREA à Madagascar ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La CAREA (Compagnie des Arbitres Rapporteurs et Experts Agréés) regroupe les experts officiellement agréés par les tribunaux malagasy. L'inscription atteste de la compétence professionnelle de l'expert et de son adhésion au code de déontologie de la Compagnie. M. RABENIMANANA Normand en est membre depuis 1990."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment obtenir un rapport d'expertise immobilière pour un dossier bancaire à Madagascar ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour un dossier de crédit immobilier, de garantie hypothécaire ou de financement bancaire à Madagascar, un rapport d'expertise signé par un expert agréé est requis. Le Cabinet établit des rapports d'évaluation vénale conformes aux standards des établissements de crédit malagasy. Contactez le Cabinet via le formulaire pour une proposition d'honoraires personnalisée."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la valeur vénale d'un bien immobilier à Antananarivo ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La valeur vénale d'un bien immobilier à Antananarivo varie en fonction de la localisation (Analamahitsy, Ambohijatovo...), de la superficie, de l'état général, du type de titre de propriété et des comparaisons de marché. Une évaluation établie par un expert agréé est généralement requise pour les transactions, successions, partages et financements bancaires."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dans quel délai peut-on obtenir un rapport d'expertise immobilière à Madagascar ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le délai de réalisation d'un rapport d'expertise immobilière au Cabinet ExpertImmo dépend de la complexité du bien et de sa localisation géographique. Pour un bien standard à Antananarivo, comptez généralement entre 5 et 15 jours ouvrables à compter de la réception de l'ordre de mission signé et des documents nécessaires (titre foncier, plans, etc.)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ExpertImmo intervient-il en dehors d'Antananarivo ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, le Cabinet ExpertImmo intervient sur l'ensemble du territoire malagasy. M. RABENIMANANA Normand réalise des expertises immobilières dans les grandes villes de Madagascar (Toamasina, Fianarantsoa, Mahajanga, Toliara, Antsiranana) ainsi qu'en zone rurale pour les grands domaines agricoles ou industriels, sous réserve de l'acceptation préalable d'une convention d'honoraires incluant les frais de déplacement."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.expertimmo.mg/#website",
+        "url": "https://www.expertimmo.mg",
+        "name": "Cabinet ExpertImmo",
+        "alternateName": ["Cabinet ExpertImmo", "ExpertImmo"],
+        "description": "Site officiel du Cabinet d'Expertise Immobilière RABENIMANANA Normand, expert en Bâtiments et Biens immobiliers assermenté agréé près les Cours et Tribunaux de Madagascar, membre CAREA depuis 1990.",
+        "inLanguage": "fr",
+        "publisher": { "@id": "https://www.expertimmo.mg/#cabinet" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-title", ".section-subtitle", ".faq-answer"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.expertimmo.mg/" },
+          { "@type": "ListItem", "position": 2, "name": "Le Cabinet", "item": "https://www.expertimmo.mg/#a-propos" },
+          { "@type": "ListItem", "position": 3, "name": "Nos Services", "item": "https://www.expertimmo.mg/#services" },
+          { "@type": "ListItem", "position": 4, "name": "FAQ", "item": "https://www.expertimmo.mg/#faq" },
+          { "@type": "ListItem", "position": 5, "name": "Contact", "item": "https://www.expertimmo.mg/#contact" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ PERFORMANCE : PRELOADS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/img/Lac_anosy_1464w.webp" fetchpriority="high">
+  <link rel="manifest" href="manifest.json">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- ═══ CONTENT SECURITY POLICY (Lot 6 — TECH-10) ═══ -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Form styles moved to main.css -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+<title>Cabinet ExpertImmo | RABENIMANANA Normand - Expertise Immobilière à Madagascar</title>
+<meta property="og:site_name" content="Cabinet ExpertImmo | RABENIMANANA Normand" />
+
+
 </head>
+
 <body>
+  <div id="scroll-progress"></div>
 
-  <header class="site-header" role="banner">
-    <div class="header-container">
-      <a href="/" class="logo" aria-label="Cabinet ExpertImmo, page d'accueil">
-        <span class="logo-mark">ExpertImmo</span>
-        <span class="logo-baseline">Cabinet RABENIMANANA Normand · Membre CAREA depuis 1990</span>
-      </a>
-      <nav class="main-nav" role="navigation" aria-label="Navigation principale">
-        <ul>
-          <li><a href="/" aria-current="page">Accueil</a></li>
-          <li><a href="/#a-propos">Le Cabinet</a></li>
-          <li><a href="/#domaines">Domaines d'Intervention</a></li>
-          <li><a href="/#methodologie">Méthodologie</a></li>
-          <li><a href="/honoraires.html">Honoraires</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+  <!-- HEADER (injecté depuis components/header.html) -->
+  <div id="site-header">
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#accueil" onclick="closeMobile()">Accueil</a>
+  <a href="#a-propos" onclick="closeMobile()">Le Cabinet</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#pour-qui" onclick="closeMobile()">Pour qui ?</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#articles" onclick="closeMobile()">Articles</a>
+
+  <a href="#contact" class="cta-button" onclick="closeMobile()">Contacter le Cabinet</a>
+</div>
+<nav class="navbar" id="navbar">
+  <a href="/" class="logo-container">
+    <img src="expertimmo-logo-favicon.webp" alt="ExpertImmo — Cabinet d'expertise immobilière Madagascar" class="logo-img" loading="eager"
+      style="filter: drop-shadow(0px 0px 1px var(--primary)) drop-shadow(0px 1px 2px var(--accent));">
+    <div>
+      <span class="logo-text">ExpertImmo</span>
+      <span class="logo-carea">Membre CAREA · Agréé depuis 1990</span>
     </div>
-  </header>
 
-  <div class="contact-bar" role="complementary" aria-label="Contact rapide">
-    <span class="contact-bar-label contact-bar-desktop">Cabinet ExpertImmo</span>
-    <span class="contact-bar-separator contact-bar-desktop" aria-hidden="true">·</span>
-    <a href="mailto:contact@expertimmo.mg" class="contact-bar-link contact-bar-desktop">contact@expertimmo.mg</a>
-    <span class="contact-bar-separator contact-bar-desktop" aria-hidden="true">·</span>
-    <a href="tel:+261320779263" class="contact-bar-link contact-bar-desktop">+261 32 07 79 263</a>
-    <a href="tel:+261320779263" class="contact-bar-link contact-bar-mobile">+261 32 07 79 263</a>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#a-propos">Le Cabinet</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pour-qui">Pour qui ?</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#articles">Articles</a></li>
+
+  </ul>
+  <div style="display:flex; align-items:center; gap: 1rem;">
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Langue : Français — changer de langue / change language" onclick="toggleLang(event)">
+        <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="1.4em" height="1.05em" style="vertical-align: middle; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#ED2939"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/></svg></span>
+        <svg class="lang-caret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="lang-menu" role="menu" aria-label="Choix de la langue">
+        <a class="lang-option active" role="menuitem" hreflang="fr" href="/" aria-current="true" onclick="setLang('fr')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="1.4em" height="1.05em" style="vertical-align: middle; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); margin-right: 6px;"><rect width="3" height="2" fill="#ED2939"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/></svg> Français</a>
+        <a class="lang-option" role="menuitem" hreflang="en" href="en/index" onclick="setLang('en')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="1.4em" height="1.05em" preserveAspectRatio="none" style="vertical-align: middle; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); margin-right: 6px;"><clipPath id="t"><path d="M30 15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0 0v30h60v-30z" fill="#012169"/><path d="M0 0l60 30m0-30l-60 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30l-60 30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30m-30-15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30m-30-15h60" stroke="#C8102E" stroke-width="6"/></svg> English</a>
+      </div>
+    </div>
+    <a href="#contact" class="cta-button">Contacter le Cabinet</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+</div>
+
+  <!-- Mobile Menu -->
+</div>
+
+  <!-- NAVIGATION -->
+<main id="main-content">
+
+
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <img src="assets/img/Lac_anosy_800w.webp"
+      srcset="assets/img/Lac_anosy_400w.webp 400w, assets/img/Lac_anosy_800w.webp 800w, assets/img/Lac_anosy_1464w.webp 1464w"
+      sizes="100vw"
+      fetchpriority="high" loading="eager"
+      alt="Antananarivo, capitale de Madagascar — Cabinet d'expertise immobilière ExpertImmo"
+      class="hero-bg" width="1464" height="565">
+    <div class="hero-content">
+      <div class="hero-eyebrow" style="flex-wrap: wrap;">
+        <span class="carea-badge">Membre CAREA</span>
+        <span class="since-badge">Agréé depuis 1990</span>
+        <div style="border: 1px solid #B8860B; padding: 6px 14px; border-radius: 4px; font-family: var(--font-heading); font-size: 1.1rem; color: #B8860B; letter-spacing: 0.5px; background: rgba(184, 134, 11, 0.1); width: 100%; margin-top: 4px;">
+          Expert Agréé près les Cours et Tribunaux de Madagascar — Loi N° 2006-15 du 20 juillet 2006
+        </div>
+      </div>
+      <h1 class="hero-title reveal-item"><span>Expertise Immobilière</span><br>Judiciaire et Vénale à Madagascar
+      </h1>
+      <div class="hero-monopoly">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+          <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+          <path d="M12 8v4" />
+          <path d="m10 16 2-2 2 2" />
+          <path d="M2 12 12 2l10 10" />
+          <line x1="3" y1="21" x2="21" y2="3" />
+        </svg>
+        Plus de trente-cinq années d'engagement au service de la justice malagasy — inscrit à la CAREA depuis 1990
+      </div>
+      <p class="hero-desc">
+        M. <strong>RABENIMANANA Normand</strong> — Expertise au service des juridictions, des notaires
+        et institutions financières de Madagascar. Des rapports d'évaluation dotés de la force probante reconnue à l'expert agréé, conformes
+        aux exigences professionnelles de la CAREA.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="cta-button">Contacter le Cabinet</a>
+        <a href="#a-propos" class="btn-outline">Découvrir le Cabinet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-items">
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+            <path d="M12 8v4" />
+            <path d="m10 16 2-2 2 2" />
+            <path d="M2 12 12 2l10 10" />
+            <line x1="3" y1="21" x2="21" y2="3" />
+          </svg></span> <span>Agréé près les Cours
+          &amp; Tribunaux de Madagascar</span></div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+            <path d="M17 18h1" />
+            <path d="M12 18h1" />
+            <path d="M7 18h1" />
+          </svg></span> <span>Expert inscrit CAREA depuis
+          1990</span></div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="12" x2="12" y1="2" y2="22" />
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg></span> <span>Rapports conformes aux exigences des comités de crédit malagasy</span></div>
+      <div class="trust-item"><span class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+            <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+            <path d="m9 15 2 2 4-4" />
+          </svg></span> <span>Rapports dotés de la force probante reconnue</span></div>
+    </div>
   </div>
 
-  <div class="mobile-menu" role="dialog" aria-label="Menu principal">
-    <button class="mobile-menu-close" aria-label="Fermer le menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <a href="/">Accueil</a>
-    <a href="/#a-propos">Le Cabinet</a>
-    <a href="/#domaines">Domaines d'Intervention</a>
-    <a href="/#methodologie">Méthodologie</a>
-    <a href="/honoraires.html">Honoraires</a>
-    <a href="/#contact">Contact</a>
-  </div>
+  <!-- ABOUT -->
+  <section id="a-propos" class="section">
+    <h2 class="section-title reveal-item">Le Cabinet</h2>
+    <div class="title-underline"></div>
+    <!-- ═══ AEO : RÉPONSE DIRECTE — À PROPOS ═══ -->
+    <div style="max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: center;">
+      <div style="flex: 1 1 350px; max-width: 500px;">
+        <img src="assets/img/expertimmo-interior.webp" alt="Intérieur du Cabinet ExpertImmo" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+      </div>
+      <div class="about-text-wrapper carea-highlight" style="flex: 1 1 400px;">
+        <p style="line-height: 1.7; margin: 0; font-size: 1.05rem;">
+          Fondé en <strong>1990</strong> à <strong>Antananarivo</strong> par <strong>M. RABENIMANANA Normand</strong> — Expert en Bâtiments et Biens immobiliers Agréé près les Cours et Tribunaux de Madagascar et inscrit à la <strong>CAREA</strong> (Compagnie des Arbitres Rapporteurs et Experts Agréés) — le <strong>Cabinet ExpertImmo | RABENIMANANA Normand</strong> accompagne les banques, juridictions, notaires et particuliers dans leurs problématiques d'évaluation immobilière.
+        </p>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Une expertise immobilière depuis 1990</h3>
+        <p>Le Cabinet exerce sa mission dans le cadre déontologique de la CAREA, sous la responsabilité personnelle de son fondateur. Cette continuité d'exercice permet de mobiliser une connaissance précise de l'évolution du marché malagasy et de la jurisprudence immobilière locale.</p>
 
-  <main>
+        <ul class="credential-list">
+          <li>
+            <span class="credential-icon">✦</span>
+            <div><strong>Agrément judiciaire</strong> — Rapports dotés de la force probante reconnue à l'expert agréé, recevables devant les juridictions civiles et commerciales de Madagascar.</div>
+          </li>
+          <li>
+            <span class="credential-icon">✦</span>
+            <div><strong>Compétence technique</strong> — 45 ans d'expérience en construction générale au service de l'évaluation, permettant l'intégration de la réalité constructive des biens.</div>
+          </li>
+          <li>
+            <span class="credential-icon">✦</span>
+            <div><strong>Méthodologie multi-approches</strong> — Méthode par comparaison, approche par capitalisation des revenus et coût de remplacement net, adaptées au marché malagasy.</div>
+          </li>
+        </ul>
 
-    <!-- === HERO === -->
-    <section id="accueil" class="hero">
-      <svg class="hero-silhouette" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 400C150 380 300 340 450 350C600 360 700 300 850 320C1000 340 1150 280 1300 310C1400 330 1440 360 1440 400H0Z" stroke="#d4af37" stroke-width="1.5" stroke-opacity="0.15"/>
-        <path d="M710 320V290H730V260H760V290H780V320H710Z M720 290H770 M745 260V240 M735 245H755" stroke="#d4af37" stroke-width="1.5" stroke-opacity="0.15"/>
-        <path d="M650 330L670 310H690L710 330 M800 320L820 300H840L860 320" stroke="#d4af37" stroke-width="1.5" stroke-opacity="0.15"/>
-        <path d="M0 385Q250 335 500 365T1000 315T1440 375" stroke="#d4af37" stroke-width="1.2" stroke-opacity="0.1"/>
-      </svg>
-      <div class="hero-line"></div>
-      <div class="hero-content">
-        <p class="surtitle surtitle--light">MEMBRE CAREA · INSCRIT EN 1990</p>
-        <span class="filet filet--center"></span>
-        <h1>Cabinet d'Expertise Immobilière<br>près les Cours et Tribunaux de Madagascar</h1>
-        <p class="hero-subtitle">M. RABENIMANANA Normand — Expert en Bâtiments et Biens Immobiliers Agréé près les Cours et Tribunaux de Madagascar</p>
-        <p class="hero-intro">Inscrit sur la liste de la CAREA depuis 1990, le Cabinet établit des rapports d'expertise opposables aux tiers, dans le respect strict de la déontologie d'auxiliaire de justice : indépendance, impartialité, probité, compétence, confidentialité.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn--hero-primary">Saisir le Cabinet</a>
-          <a href="#methodologie" class="btn btn--hero-secondary">Consulter la Méthodologie</a>
+        <div class="carea-highlight reveal-item">
+          <h4>Que signifie une expertise CAREA pour vous ?</h4>
+          <p>Les rapports établis par le Cabinet répondent au code de déontologie de la Compagnie des Arbitres Rapporteurs et Experts Agréés (CAREA). Ils sont <strong>dotés de la force probante reconnue à l'expert inscrit à la CAREA</strong>, <strong>recevables auprès des départements crédits des établissements bancaires</strong>, et <strong>acceptés par les notaires</strong> pour l'assiette des droits d'enregistrement. Leur portée à l'égard des tiers s'apprécie selon les règles de droit commun applicables aux écrits d'expertise.</p>
+          <p style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(0,0,0,0.08); font-size:0.95rem;">
+            Toutes les missions sont menées dans le respect du code de déontologie de la CAREA :
+            <strong>indépendance</strong>, <strong>impartialité</strong>, <strong>probité</strong>, <strong>compétence</strong> et <strong>confidentialité</strong>.
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- === BANDEAU INSTITUTIONNEL === -->
-    <section class="inst-banner section--ivory">
-      <div class="container inst-banner-grid">
-        <div class="inst-banner-col">
-          <svg class="inst-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 5V35 M10 12H30 M10 12L13 28 M30 12L27 28 M13 28Q20 30 27 28" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M5 35H35" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-          <p class="inst-banner-text">Agrément près les<br>Cours et Tribunaux de Madagascar</p>
-        </div>
-        <div class="inst-banner-col">
-          <svg class="inst-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="15" stroke-width="1"/>
-            <circle cx="20" cy="20" r="12" stroke-width="0.8"/>
-            <text x="20" y="26" text-anchor="middle" font-family="Cormorant Garamond" font-size="18" fill="#a8862a">C</text>
-          </svg>
-          <p class="inst-banner-text">Inscription CAREA<br>depuis 1990</p>
-        </div>
-        <div class="inst-banner-col">
-          <svg class="inst-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 8L24 12L23 18L25 24L22 32L18 34L15 30L16 22L14 16L17 10L22 8Z" stroke-width="1.2" stroke-linejoin="round"/>
-          </svg>
-          <p class="inst-banner-text">Couverture nationale<br>malgache</p>
-        </div>
-        <div class="inst-banner-col">
-          <svg class="inst-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 8H25L30 13V32H10V8Z" stroke-width="1.2"/>
-            <path d="M25 8V13H30" stroke-width="1.2"/>
-            <circle cx="25" cy="28" r="4" stroke-width="1"/>
-          </svg>
-          <p class="inst-banner-text">Rapports opposables<br>aux tiers</p>
-        </div>
-      </div>
-    </section>
+      <div class="about-visual">
+        <div class="profile-carousel-container" style="position:relative; width:100%; max-width:350px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+          <div class="profile-carousel-inner" style="position:relative; width:100%; overflow:hidden; border-radius:12px; padding-bottom:10px;">
+            <div class="profile-carousel-track" style="display:flex; transition:transform 0.4s ease; width:200%;">
 
-    <!-- === LE CABINET === -->
-    <section id="a-propos" class="section section--ivory">
-      <div class="container cabinet-grid">
-        <div class="cabinet-portrait">
-          <div class="placeholder-img" style="width:100%;aspect-ratio:3/4"></div>
-        </div>
-        <div class="cabinet-text">
-          <p class="surtitle">LE CABINET</p>
-          <span class="filet filet--40"></span>
-          <h2>Trente-six années au service des juridictions et institutions malgaches</h2>
-          <p>Le Cabinet, fondé en 1990 à Antananarivo sous le nom de Cabinet RABENIMANANA Normand, exerce aujourd'hui sous l'enseigne ExpertImmo. M. RABENIMANANA Normand, Expert en Bâtiments et Biens Immobiliers Agréé près les Cours et Tribunaux de Madagascar, demeure le pilier de toutes les missions signées du Cabinet. Inscrit dès 1990 sur la liste de la Compagnie des Arbitres Rapporteurs et Experts Agréés près les Cours et Tribunaux de Madagascar (CAREA), le Cabinet est l'un des plus anciens en exercice continu à Madagascar.</p>
-          <p>Son activité couvre les missions judiciaires confiées par voie d'ordonnance, ainsi que les missions amiables sollicitées par les particuliers, les entreprises, les notaires, les avocats et les établissements bancaires de la place. Chaque rapport est établi selon les standards de la profession, signé par l'expert, et opposable aux tiers devant l'ensemble des juridictions de Madagascar.</p>
-          <p>Une pratique antérieure approfondie en construction générale confère au Cabinet une lecture technique fine du bâti, particulièrement utile dans les missions portant sur des ouvrages complexes, des sinistres ou des évaluations à coût de remplacement.</p>
-          <p>L'enseigne ExpertImmo formalise une étape de continuité institutionnelle : assurer la transmission progressive des missions, accueillir de nouveaux experts agréés au sein d'une même structure et préparer la pérennité du Cabinet au-delà d'une seule génération. Le Cabinet RABENIMANANA Normand demeure le nom historique et juridique du Cabinet.</p>
-          <span class="filet"></span>
-          <p class="cabinet-deonto">Indépendance · Impartialité · Probité · Compétence · Confidentialité</p>
-        </div>
-      </div>
-    </section>
+              <!-- PROFIL 1 -->
+              <div class="profile-carousel-item" style="width:50%; flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:1.5rem; padding:0 10px; box-sizing:border-box;">
+                <div class="profile-photo-wrapper">
+                  <a href="https://www.linkedin.com/in/rabenimanana-normand/" target="_blank" rel="noopener noreferrer me" aria-label="Profil LinkedIn de M. RABENIMANANA Normand" class="linkedin-profile-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="linkedin-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                  <img src="assets/img/Founder_Profil_560w.webp"
+                  srcset="assets/img/Founder_Profil_280w.webp 280w, assets/img/Founder_Profil_560w.webp 560w"
+                  sizes="(max-width:600px) 280px, 280px"
+                  loading="lazy"
+                  alt="RABENIMANANA Normand — Expert en Bâtiments et Biens immobiliers Agréé CAREA depuis 1990"
+                  width="280" height="280"
+                  style="width:100%;max-width:280px;height:auto;border-radius:8px;box-shadow:0 15px 35px rgba(0,0,0,0.1);display:block;margin:0 auto;">
+                </div>
+                <div style="text-align:center;line-height:1.3;display:flex;flex-direction:column;align-items:center;margin-top:12px;">
+                  <strong style="color:var(--primary);font-family:'Cinzel', serif;font-size:18px;font-weight:700;letter-spacing:0.06em;">RABENIMANANA Normand</strong>
+                  <span style="color:var(--text-muted);font-family:'Cinzel', serif;font-size:13px;font-weight:400;letter-spacing:0.12em;margin-top:4px;">PRÉSIDENT-FONDATEUR &amp; EXPERT PRINCIPAL</span>
+                </div>
+              </div>
 
-    <!-- === BANDEAU STATISTIQUES === -->
-    <section class="stats-banner">
-      <div class="container stats-grid">
-        <div class="stats-col">
-          <span class="stats-value">36</span>
-          <span class="filet filet--center filet--40"></span>
-          <span class="stats-label">ANNÉES D'AGRÉMENT CAREA</span>
-        </div>
-        <div class="stats-col">
-          <span class="stats-value">1990</span>
-          <span class="filet filet--center filet--40"></span>
-          <span class="stats-label">ANNÉE D'INSCRIPTION</span>
-        </div>
-        <div class="stats-col">
-          <span class="stats-value">NATIONAL</span>
-          <span class="filet filet--center filet--40"></span>
-          <span class="stats-label">TERRITOIRE D'INTERVENTION</span>
-        </div>
-        <div class="stats-col">
-          <span class="stats-value">V</span>
-          <span class="filet filet--center filet--40"></span>
-          <span class="stats-label">CHAMPS D'EXPERTISE</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- === ENGAGEMENT DÉONTOLOGIQUE === -->
-    <section id="deontologie" class="section section--ivory">
-      <div class="container">
-        <div class="section-header">
-          <p class="surtitle">CODE DE DÉONTOLOGIE</p>
-          <span class="filet filet--center filet--40"></span>
-          <h2>Cinq piliers d'engagement</h2>
-          <p style="max-width: 700px; margin-left: auto; margin-right: auto;">Membre de la CAREA depuis 1990, le Cabinet observe le code de déontologie de la profession. Chacun de ses cinq piliers conditionne, sans exception, la conduite de toute mission.</p>
-        </div>
-        <div class="deonto-grid">
-          <div class="deonto-block">
-            <span class="deonto-num">I</span>
-            <span class="filet filet--40"></span>
-            <h3>INDÉPENDANCE</h3>
-            <p>L'expert ne se trouve dans aucune situation d'intérêt direct ou indirect avec le bien expertisé, les parties au litige ou les institutions saisissantes. Aucun honoraire n'est calculé proportionnellement à la valeur estimée.</p>
-          </div>
-          <div class="deonto-block">
-            <span class="deonto-num">II</span>
-            <span class="filet filet--40"></span>
-            <h3>IMPARTIALITÉ</h3>
-            <p>L'évaluation est conduite sans parti pris, en équité entre toutes les parties intéressées. Les conclusions ne reflètent ni les attentes du mandant, ni les positions de la partie adverse.</p>
-          </div>
-          <div class="deonto-block">
-            <span class="deonto-num">III</span>
-            <span class="filet filet--40"></span>
-            <h3>PROBITÉ</h3>
-            <p>Les pièces du dossier, les méthodes appliquées et les sources consultées sont fidèlement rapportées. Le rapport ne dissimule aucun élément susceptible d'affecter ses conclusions.</p>
-          </div>
-          <div class="deonto-block">
-            <span class="deonto-num">IV</span>
-            <span class="filet filet--40"></span>
-            <h3>COMPÉTENCE</h3>
-            <p>Le Cabinet n'accepte que les missions relevant de son champ de qualification. La formation continue et la veille professionnelle sont entretenues sans interruption depuis l'inscription en 1990.</p>
-          </div>
-          <div class="deonto-block">
-            <span class="deonto-num">V</span>
-            <span class="filet filet--40"></span>
-            <h3>CONFIDENTIALITÉ</h3>
-            <p>L'ensemble des informations recueillies au cours d'une mission est couvert par le secret professionnel. Aucune donnée relative à un dossier n'est communiquée hors les parties au contrat, les instances de contrôle ou sur réquisition judiciaire.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- === DOMAINES D'INTERVENTION === -->
-    <section id="domaines" class="section section--navy-medium">
-      <div class="container">
-        <div class="section-header">
-          <p class="surtitle surtitle--light">DOMAINES D'INTERVENTION</p>
-          <span class="filet filet--center"></span>
-          <h2 style="color:var(--ivory)">Sept champs d'expertise</h2>
-          <p style="color:var(--ivory)">Le Cabinet intervient dans sept champs distincts, encadrés chacun par un cahier des charges propre et un référentiel méthodologique formalisé. Sa qualité d'Expert en Bâtiments et Biens Immobiliers couvre à la fois l'évaluation financière des actifs et l'expertise technique du bâti.</p>
-        </div>
-      </div>
-      <div class="domains-slider" aria-roledescription="carousel" aria-label="Domaines d'intervention">
-        <button class="slider-arrow slider-arrow--prev" aria-label="Domaine précédent"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="10,2 4,8 10,14"/></svg></button>
-        <div class="domains-track">
-          <div class="domain-card"><span class="domain-num">I</span><svg class="domain-icon" viewBox="0 0 32 32"><path d="M8 24L12 20M12 20L18 14M18 14L22 18L16 24L12 20ZM24 8L20 12" stroke-width="1.2" stroke-linecap="round"/></svg><span class="filet filet--40"></span><h3>EXPERTISE JUDICIAIRE ET CONTRADICTOIRE</h3><p>Rapports établis sur ordonnance, jugement ou mission de conciliation devant les juridictions malgaches. Litiges immobiliers, partages successoraux, expropriations, contradictoire entre parties, mesures d'instruction in futurum.</p><span class="filet filet--40"></span><span class="domain-tag">Cours · Tribunaux · CAREA</span></div>
-          <div class="domain-card"><span class="domain-num">II</span><svg class="domain-icon" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke-width="1.2"/><circle cx="16" cy="16" r="7" stroke-width="0.8" stroke-dasharray="2 2"/><path d="M14 13C14 13 18 13 18 16C18 19 14 19 14 19" stroke-width="1.2"/></svg><span class="filet filet--40"></span><h3>ÉVALUATION VÉNALE</h3><p>Détermination motivée de la valeur de marché des biens résidentiels, commerciaux, industriels ou fonciers. Méthode par comparaison, capitalisation du revenu, coût de remplacement déprécié ou bilan promoteur, selon la nature du bien.</p><span class="filet filet--40"></span><span class="domain-tag">Transactions · Successions · Apports</span></div>
-          <div class="domain-card"><span class="domain-num">III</span><svg class="domain-icon" viewBox="0 0 32 32"><path d="M10 26V6H22V26M10 26H22 M19 16V18" stroke-width="1.2"/><circle cx="19" cy="17" r="1.5" stroke-width="1"/></svg><span class="filet filet--40"></span><h3>ÉVALUATION LOCATIVE</h3><p>Détermination motivée de la valeur locative des biens à usage résidentiel, commercial, industriel ou de bureaux. Renouvellement de bail, révision de loyer, fixation d'indemnités d'éviction et de dépôts de garantie.</p><span class="filet filet--40"></span><span class="domain-tag">Baux · Loyers · Éviction</span></div>
-          <div class="domain-card"><span class="domain-num">IV</span><svg class="domain-icon" viewBox="0 0 32 32"><circle cx="10" cy="22" r="4" stroke-width="1.2"/><path d="M13 19L24 8L26 10L24 12L22 10" stroke-width="1.2"/></svg><span class="filet filet--40"></span><h3>GARANTIE HYPOTHÉCAIRE</h3><p>Rapports d'évaluation pour les dossiers de crédit immobilier et la constitution de garanties réelles, conformes aux standards méthodologiques attendus par les principales banques et institutions financières de la place malgache.</p><span class="filet filet--40"></span><span class="domain-tag">Crédit · Nantissement · Hypothèque</span></div>
-          <div class="domain-card"><span class="domain-num">V</span><svg class="domain-icon" viewBox="0 0 32 32"><path d="M6 26V12L16 6L26 12V26H6Z" stroke-width="1.2"/><path d="M10 16L22 22" stroke-width="1.2"/></svg><span class="filet filet--40"></span><h3>EXPERTISE EN PATHOLOGIE DU BÂTIMENT</h3><p>Diagnostic des désordres affectant le gros œuvre et le second œuvre : fissures, infiltrations, défauts de fondation, malfaçons, vices de construction. Établissement des causes, des responsabilités et du chiffrage des remises en état.</p><span class="filet filet--40"></span><span class="domain-tag">Désordres · Malfaçons · Vices</span></div>
-          <div class="domain-card"><span class="domain-num">VI</span><svg class="domain-icon" viewBox="0 0 32 32"><path d="M6 26V14L16 8L22 11.5 M26 26V18L24 16.5" stroke-width="1.2"/><path d="M6 14L10 18" stroke-width="1.2"/></svg><span class="filet filet--40"></span><h3>EXPERTISE EN SINISTRES IMMOBILIERS</h3><p>Expertise des dommages consécutifs à un sinistre (incendie, dégât des eaux, effondrement, événement climatique). Évaluation des biens détruits, des coûts de remise en état et des préjudices accessoires, en lien avec les compagnies d'assurance et les juridictions.</p><span class="filet filet--40"></span><span class="domain-tag">Assurance · Dommages · Indemnités</span></div>
-          <div class="domain-card"><span class="domain-num">VII</span><svg class="domain-icon" viewBox="0 0 32 32"><circle cx="16" cy="10" r="3" stroke-width="1.2"/><circle cx="10" cy="22" r="3" stroke-width="1.2"/><circle cx="22" cy="22" r="3" stroke-width="1.2"/><path d="M16 13V16M16 16H10V19M16 16H22V19" stroke-width="1.2"/></svg><span class="filet filet--40"></span><h3>EXPERTISE PATRIMONIALE ET SUCCESSORALE</h3><p>Audit et valorisation de patrimoines immobiliers institutionnels ou familiaux. Préparation de transmission, partage successoral, arbitrage entre actifs, optimisation de portefeuille foncier dans un cadre juridique sécurisé.</p><span class="filet filet--40"></span><span class="domain-tag">Patrimoine · Transmission · Partage</span></div>
-        </div>
-        <button class="slider-arrow slider-arrow--next" aria-label="Domaine suivant"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6,2 12,8 6,14"/></svg></button>
-        <div class="domains-dots" aria-label="Pagination des domaines"></div>
-      </div>
-    </section>
-
-    <!-- === PROCÉDURE DE MISSION === -->
-    <section class="section section--navy-medium" id="procedure">
-      <div class="container">
-        <div class="section-header">
-          <p class="surtitle surtitle--light">DÉROULÉ DE MISSION</p>
-          <span class="filet filet--center"></span>
-          <h2 style="color:var(--ivory)">De la saisine à la remise du rapport</h2>
-          <p style="color:var(--ivory)">Chaque mission suit une procédure en cinq étapes, formalisée et transparente.</p>
-        </div>
-        <div class="steps-timeline">
-          <div class="step">
-            <div class="step-circle"><span>I</span></div>
-            <h4>SAISINE</h4>
-            <p>Première prise de contact par formulaire, courrier ou ordonnance. Examen préalable de la nature et de la recevabilité de la mission.</p>
-          </div>
-          <div class="step">
-            <div class="step-circle"><span>II</span></div>
-            <h4>CONVENTION</h4>
-            <p>Établissement d'une convention d'honoraires écrite, précisant l'objet, le périmètre, le calendrier et les modalités financières. Signature préalable obligatoire.</p>
-          </div>
-          <div class="step">
-            <div class="step-circle"><span>III</span></div>
-            <h4>INSTRUCTION</h4>
-            <p>Examen des pièces (titre foncier, plans, baux, actes notariés). Recherche des transactions et données de marché comparables.</p>
-          </div>
-          <div class="step">
-            <div class="step-circle"><span>IV</span></div>
-            <h4>VISITE</h4>
-            <p>Visite contradictoire ou unilatérale du bien selon le cadre de la mission. Relevés, photographies, constatations et entretiens éventuels avec les parties.</p>
-          </div>
-          <div class="step">
-            <div class="step-circle"><span>V</span></div>
-            <h4>RAPPORT</h4>
-            <p>Rédaction du rapport circonstancié, signé par l'expert, remis au mandant ou à la juridiction. Opposable aux tiers selon le cadre légal.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- === MÉTHODOLOGIE D'ÉVALUATION === -->
-    <section id="methodologie" class="section-methodo">
-      <div class="methodo-top">
-        <div class="container">
-          <div class="section-header">
-            <span class="filet filet--80 filet--center" style="height:1.5px"></span>
-            <p class="surtitle" style="font-size:0.9375rem;letter-spacing:0.2em">MANIFESTE MÉTHODOLOGIQUE</p>
-            <h2 class="methodo-h2">Quatre méthodes, un seul standard d'exigence</h2>
-            <p class="methodo-intro">Chaque rapport du Cabinet repose sur une méthode d'évaluation formalisée, choisie selon la nature du bien et la finalité de la mission. Les quatre approches qui suivent constituent le socle méthodologique du Cabinet, en cohérence avec les référentiels professionnels internationaux.</p>
-          </div>
-          <div class="methodo-grid">
-            <div class="methodo-block">
-              <span class="methodo-num">I</span>
-              <span class="filet" style="width:50px"></span>
-              <h3>MÉTHODE PAR COMPARAISON</h3>
-              <p>Détermination de la valeur par confrontation avec des transactions récentes portant sur des biens présentant des caractéristiques équivalentes (localisation, nature, état, surface utile). Méthode privilégiée pour les biens résidentiels et commerciaux courants disposant d'un marché comparable suffisamment liquide.</p>
+              <!-- PROFIL 2 -->
+              <div class="profile-carousel-item" style="width:50%; flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:1.5rem; padding:0 10px; box-sizing:border-box;">
+                <div class="profile-photo-wrapper">
+                  <a href="https://www.linkedin.com/in/lalason-rabenimanana/" target="_blank" rel="noopener noreferrer me" aria-label="Profil LinkedIn de Lalason RABENIMANANA" class="linkedin-profile-link" style="color:#0A66C2;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="linkedin-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                  <img src="assets/img/Lalason_profil_560w.webp"
+                  srcset="assets/img/Lalason_profil_280w.webp 280w, assets/img/Lalason_profil_560w.webp 560w"
+                  sizes="(max-width:600px) 280px, 280px"
+                  loading="lazy"
+                  alt="RABENIMANANA Lalason — Développeur web, Cabinet ExpertImmo Madagascar"
+                  width="280" height="280"
+                  style="width:100%;max-width:280px;height:auto;border-radius:8px;box-shadow:0 15px 35px rgba(0,0,0,0.1);display:block;margin:0 auto;">
+                </div>
+                <div style="text-align:center;line-height:1.3;display:flex;flex-direction:column;align-items:center;margin-top:12px;">
+                  <strong style="color:var(--primary);font-family:'Cinzel', serif;font-size:18px;font-weight:700;letter-spacing:0.06em;">RABENIMANANA Lalason</strong>
+                  <span style="color:var(--text-muted);font-family:'Cinzel', serif;font-size:13px;font-weight:400;letter-spacing:0.12em;margin-top:4px;">CHIEF TECHNOLOGY OFFICER</span>
+                </div>
+              </div>
             </div>
-            <div class="methodo-block">
-              <span class="methodo-num">II</span>
-              <span class="filet" style="width:50px"></span>
-              <h3>MÉTHODE PAR CAPITALISATION DU REVENU</h3>
-              <p>Détermination de la valeur par actualisation des revenus locatifs nets attendus du bien, en application d'un taux de capitalisation cohérent avec le risque et le marché. Méthode adaptée aux biens locatifs, immeubles de rapport, locaux commerciaux et bureaux.</p>
+          </div>
+
+          <div class="profile-pagination" style="display:flex; justify-content:center; gap:8px; margin-top:1.2rem;">
+            <button class="profile-dot active" data-index="0" aria-label="Aller au profil 1" style="height:8px;border:none;cursor:pointer;padding:0;transition:all 0.4s ease;border-radius:4px;background:var(--primary);width:32px;"></button>
+            <button class="profile-dot" data-index="1" aria-label="Aller au profil 2" style="height:8px;border:none;cursor:pointer;padding:0;transition:all 0.4s ease;border-radius:50%;background:#ccc;width:8px;"></button>
+          </div>
+        </div>
+
+
+        <div class="about-badge">
+          <span class="num counter" data-target="35" data-prefix="+" aria-valuenow="35">+35</span>
+          <span class="lbl">Années<br>d'Agrément</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">1990</div>
+        <div class="stat-label">Agrément Judiciaire</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number counter" data-target="1500" data-separator=" " data-prefix="+" aria-valuenow="1500">+1500</div>
+        <div class="stat-label">Expertises Réalisées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">CAREA</div>
+        <div class="stat-label">Expert Inscrit depuis 1990</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number counter" data-target="100" data-suffix="%" aria-valuenow="100">100%</div>
+        <div class="stat-label">Rapports Conformes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <!-- SERVICES -->
+<!-- Carousel styles moved to main.css -->
+
+  <section id="services" class="nsc-section">
+    <div class="nsc-header">
+      <h2 class="section-title reveal-item">Nos Domaines d'intervention</h2>
+      <div class="title-underline" style="margin: 0 auto;"></div>
+    </div>
+
+    <div class="nsc-wrapper">
+
+      <div class="nsc-track-container">
+        <div class="nsc-track" id="nsc-track">
+          <!-- Slide 1 -->
+          <div class="nsc-slide" data-id="0" style="--c-main: #475569; --c-bg: #F8FAFC;">
+            <div class="nsc-card">
+              <div class="nsc-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" /><path d="M12 8v4" /><path d="m10 16 2-2 2 2" /><path d="M2 12 12 2l10 10" /><line x1="3" y1="21" x2="21" y2="3" /></svg></div>
+              <h3 class="nsc-title">Expertise judiciaire</h3>
+              <div class="nsc-desc-container">
+                <p class="nsc-desc">Sur réquisition des Tribunaux, des Cours d'Appel ou de la Cour Suprême, le Cabinet conduit les opérations d'expertise dans le cadre des litiges immobiliers : partages successoraux, divorces, saisies immobilières, expropriations, contentieux de la construction. Les rapports établis sont versés à la procédure et dotés de la force probante reconnue à l'expert agréé, les juridictions malagasy en appréciant souverainement la portée.</p>
+                <button class="nsc-more-btn">Voir plus</button>
+              </div>
             </div>
-            <div class="methodo-block">
-              <span class="methodo-num">III</span>
-              <span class="filet" style="width:50px"></span>
-              <h3>MÉTHODE DU COÛT DE REMPLACEMENT DÉPRÉCIÉ</h3>
-              <p>Détermination de la valeur par estimation du coût de reconstruction à neuf du bâti, affecté d'un coefficient de vétusté et de désuétude fonctionnelle, ajouté à la valeur du terrain. Méthode appliquée aux ouvrages spécifiques, biens industriels et constructions sans marché comparable suffisant.</p>
+          </div>
+          <!-- Slide 2 -->
+          <div class="nsc-slide" data-id="1" style="--c-main: #52796F; --c-bg: #F4F7F6;">
+            <div class="nsc-card">
+              <div class="nsc-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></div>
+              <h3 class="nsc-title">Évaluation vénale</h3>
+              <div class="nsc-desc-container">
+                <p class="nsc-desc">Détermination de la valeur vénale (valeur de marché) des biens immobiliers bâtis et non bâtis : terrains, immeubles d'habitation, locaux commerciaux, bâtiments industriels, complexes hôteliers. Méthodologies conformes aux standards d'évaluation : approche par comparaison, par capitalisation des revenus, par coût de remplacement.</p>
+                <button class="nsc-more-btn">Voir plus</button>
+              </div>
             </div>
-            <div class="methodo-block">
-              <span class="methodo-num">IV</span>
-              <span class="filet" style="width:50px"></span>
-              <h3>MÉTHODE DU BILAN PROMOTEUR</h3>
-              <p>Détermination de la valeur d'un terrain à bâtir par déduction, à partir du chiffre d'affaires prévisionnel d'une opération de promotion, des coûts de construction, des frais financiers et de la marge attendue par un opérateur. Méthode appliquée aux terrains à fort potentiel constructif.</p>
+          </div>
+          <!-- Slide 3 -->
+          <div class="nsc-slide" data-id="2" style="--c-main: #CB857C; --c-bg: #FDF8F7;">
+            <div class="nsc-card">
+              <div class="nsc-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /><path d="M17 18h1" /><path d="M12 18h1" /><path d="M7 18h1" /></svg></div>
+              <h3 class="nsc-title">Évaluation bancaire <span style="font-size: 0.6em; display:block; font-variant:normal; text-transform:none; color: #555; margin-top:4px;">(garantie hypothécaire)</span></h3>
+              <div class="nsc-desc-container">
+                <p class="nsc-desc">Évaluation de biens immobiliers présentés en garantie hypothécaire pour le compte des établissements de crédit malagasy. Constitution du dossier d'expertise conforme aux exigences des comités de crédit et des autorités de supervision bancaire.</p>
+                <button class="nsc-more-btn">Voir plus</button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="nsc-slide" data-id="3" style="--c-main: #7B6D8D; --c-bg: #F8F7FA;">
+            <div class="nsc-card">
+              <div class="nsc-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10" /><line x1="12" x2="12" y1="20" y2="4" /><line x1="6" x2="6" y1="20" y2="14" /></svg></div>
+              <h3 class="nsc-title">Expertise patrimoniale</h3>
+              <div class="nsc-desc-container">
+                <p class="nsc-desc">Audit et conseil pour la valorisation, la gestion et la transmission de patrimoine immobilier institutionnel ou familial. Évaluations contradictoires dans le cadre de successions, donations-partages, liquidations de régimes matrimoniaux.</p>
+                <button class="nsc-more-btn">Voir plus</button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="nsc-slide" data-id="4" style="--c-main: #C39B77; --c-bg: #FCF9F5;">
+            <div class="nsc-card">
+              <div class="nsc-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
+              <h3 class="nsc-title">Évaluation locative</h3>
+              <div class="nsc-desc-container">
+                <p class="nsc-desc">Fixation de la valeur locative pour baux résidentiels, commerciaux, industriels et de bureaux. Renouvellement de bail, fixation d'indemnités d'éviction, révision de loyers.</p>
+                <button class="nsc-more-btn">Voir plus</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="methodo-separator"></div>
-      <div class="methodo-bottom">
-        <div class="container">
-          <div class="section-header">
-            <p class="surtitle surtitle--light" style="letter-spacing:0.18em">RÉFÉRENTIELS PROFESSIONNELS</p>
-            <span class="filet filet--center"></span>
-            <blockquote class="methodo-quote">Les missions du Cabinet sont conduites selon les principes posés par la Charte de l'Expertise en Évaluation Immobilière, en cohérence avec les standards internationaux IVS (International Valuation Standards) du Conseil international des normes d'évaluation et TEGoVA (The European Group of Valuers' Associations) pour les missions à dimension internationale.</blockquote>
-          </div>
-          <div class="methodo-refs">
-            <div class="methodo-ref">
-              <h4>CHARTE DE L'EXPERTISE</h4>
-              <span>Référentiel francophone de l'évaluation immobilière</span>
-            </div>
-            <div class="methodo-ref">
-              <h4>NORMES IVS</h4>
-              <span>International Valuation Standards · Conseil international</span>
-            </div>
-            <div class="methodo-ref">
-              <h4>TEGoVA</h4>
-              <span>The European Group of Valuers' Associations</span>
-            </div>
-          </div>
+
+      <div class="nsc-dots" id="nsc-dots">
+        <button class="nsc-dot" data-id="0"></button>
+        <button class="nsc-dot" data-id="1"></button>
+        <button class="nsc-dot" data-id="2"></button>
+        <button class="nsc-dot" data-id="3"></button>
+        <button class="nsc-dot" data-id="4"></button>
+      </div>
+    </div>
+
+    <div style="max-width: 800px; margin: 2rem auto 3rem; padding: 0 2rem;">
+      <div class="carea-highlight reveal-item" style="text-align: left;">
+        <p style="line-height: 1.6; margin-top: 0;">Le Cabinet ExpertImmo propose une gamme complète de services en expertise immobilière à Madagascar : expertise judiciaire, évaluation vénale, évaluation bancaire (garantie hypothécaire), expertise patrimoniale et évaluation locative. Chaque rapport est signé, cacheté et doté de la force probante reconnue à l'expert inscrit à la CAREA.</p>
+        <p style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(0,0,0,0.08); font-size:0.95rem; margin-bottom: 0;">
+          Une expertise rigoureuse exercée dans le strict respect du code de déontologie de la CAREA : <strong>indépendance</strong>, <strong>impartialité</strong>, <strong>compétence</strong> et <strong>confidentialité</strong>.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('nsc-track');
+      if (!track) return;
+      const dots = document.querySelectorAll('.nsc-dot');
+
+      let isAnimating = false;
+
+      function updateDots() {
+        const firstSlide = track.querySelector('.nsc-slide');
+        if(!firstSlide) return;
+        const activeId = firstSlide.getAttribute('data-id');
+        const activeColor = firstSlide.style.getPropertyValue('--c-main');
+
+        dots.forEach(dot => {
+          if (dot.getAttribute('data-id') === activeId) {
+            dot.classList.add('active');
+            dot.style.setProperty('--c-active', activeColor);
+          } else {
+            dot.classList.remove('active');
+            dot.style.removeProperty('--c-active');
+          }
+        });
+      }
+
+      function slideNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+        const slideWidth = track.firstElementChild.offsetWidth;
+
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+        track.style.transform = `translateX(-${slideWidth}px)`;
+
+        setTimeout(() => {
+          track.style.transition = 'none';
+          track.appendChild(track.firstElementChild);
+          track.style.transform = 'translateX(0)';
+          updateDots();
+          isAnimating = false;
+        }, 500);
+      }
+
+      function slidePrev() {
+        if (isAnimating) return;
+        isAnimating = true;
+        const slideWidth = track.firstElementChild.offsetWidth;
+
+        track.style.transition = 'none';
+        track.prepend(track.lastElementChild);
+        track.style.transform = `translateX(-${slideWidth}px)`;
+
+        track.offsetHeight;
+
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+        track.style.transform = 'translateX(0)';
+
+        setTimeout(() => {
+          updateDots();
+          isAnimating = false;
+        }, 500);
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          if (isAnimating) return;
+          const targetId = dot.getAttribute('data-id');
+          let firstSlide = track.querySelector('.nsc-slide');
+          let currentId = firstSlide.getAttribute('data-id');
+          if (currentId === targetId) return;
+
+          let count = 0;
+          let tempTrack = Array.from(track.children);
+          while (tempTrack[0].getAttribute('data-id') !== targetId && count < 5) {
+            tempTrack.push(tempTrack.shift());
+            count++;
+          }
+
+          if (count > 0) {
+            if (count <= 2) {
+              for(let i=0; i<count; i++) {
+                 setTimeout(() => slideNext(), i * 550);
+              }
+            } else {
+              let prevCount = 5 - count;
+              for(let i=0; i<prevCount; i++) {
+                 setTimeout(() => slidePrev(), i * 550);
+              }
+            }
+          }
+        });
+      });
+
+      function checkTextOverflow() {
+        document.querySelectorAll('.nsc-desc-container').forEach(container => {
+          const desc = container.querySelector('.nsc-desc');
+          const btn = container.querySelector('.nsc-more-btn');
+          const isExpanded = desc.classList.contains('expanded');
+
+          if (!isExpanded) {
+            if (desc.scrollHeight > desc.clientHeight + 2) {
+              btn.style.display = 'inline-block';
+            } else {
+              btn.style.display = 'none';
+            }
+          }
+        });
+      }
+
+      document.querySelectorAll('.nsc-more-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const desc = e.target.previousElementSibling;
+          if (desc.classList.contains('expanded')) {
+            desc.classList.remove('expanded');
+            e.target.textContent = 'Voir plus';
+          } else {
+            desc.classList.add('expanded');
+            e.target.textContent = 'Voir moins';
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (!isAnimating) {
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+        }
+        checkTextOverflow();
+      });
+
+      setTimeout(checkTextOverflow, 500);
+      updateDots();
+
+      setInterval(slideNext, 10000);
+    });
+  </script>
+
+
+  <!-- POUR QUI -->
+  <section id="pour-qui" class="section">
+    <h2 class="section-title reveal-item">Pour qui ?</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Une expertise adaptée à chaque type d'interlocuteur institutionnel et privé.</p>
+
+    <div class="audience-grid">
+
+      <!-- Banques -->
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v3"/><path d="M12 14v3"/><path d="M16 14v3"/></svg></span>
+        <h3>Banques &amp; Établissements de crédit</h3>
+        <p>Évaluation préalable à l'octroi de prêt hypothécaire, expertise de garantie en cours de prêt, valorisation de portefeuille immobilier, due diligence avant prise de garantie.</p>
+      </div>
+
+      <!-- Cours et Tribunaux -->
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
+        <h3>Cours &amp; Tribunaux</h3>
+        <p>Désignation comme expert judiciaire pour les litiges immobiliers : partages successoraux contentieux, divorces avec patrimoine immobilier, expropriations, contentieux de la construction.</p>
+      </div>
+
+      <!-- Notaires -->
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"/><circle cx="12" cy="14" r="2"/><path d="M12 16v3"/></svg></span>
+        <h3>Notaires &amp; Études notariales</h3>
+        <p>Évaluation pour l'assiette des droits d'enregistrement, partages successoraux à l'amiable, donations, contrats de mariage avec patrimoine immobilier.</p>
+      </div>
+
+      <!-- Particuliers et Entreprises -->
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+        <h3>Particuliers &amp; Entreprises</h3>
+        <p>Achat, vente, donation, succession, déclaration patrimoniale, contestation d'évaluation administrative, due diligence pré-acquisition.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BANQUES & INSTITUTIONS -->
+  <section class="banques-section">
+    <h2 class="section-title reveal-item">Au Service des Établissements Financiers et des Juridictions</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.6)">Le Cabinet accompagne les Magistrats, les Notaires et les Établissements Financiers de Madagascar depuis <strong>plus de 35 ans</strong> dans leurs besoins d'évaluation immobilière.</p>
+
+    <div class="banques-grid">
+      <div class="banque-card">
+        <h4>Garantie Hypothécaire</h4>
+        <p>Rapport d'évaluation vénale établi par l'expert agréé, habituellement requis pour tout dossier de crédit immobilier. Format conforme aux exigences des comités de crédit bancaires.</p>
+      </div>
+      <div class="banque-card">
+        <h4>Due Diligence Immobilière</h4>
+        <p>Audit complet de la valeur et des risques d'un actif immobilier avant
+          acquisition. Vérification des titres,
+          servitudes, conformités urbanistiques.</p>
+      </div>
+      <div class="banque-card">
+        <h4>Expertise pour Litiges</h4>
+        <p>Expertise judiciaire dont les rapports font foi devant les juridictions. Habituellement sollicitée par les avocats, huissiers et magistrats dans les contentieux immobiliers.</p>
+      </div>
+      <div class="banque-card">
+        <h4>Valorisation d'Actifs</h4>
+        <p>Évaluation des portefeuilles immobiliers pour bilan comptable,
+          fusion-acquisition, appel d'offres ou cession
+          d'actifs d'entreprises.</p>
+      </div>
+    </div>
+
+    <p class="banques-note">Les rapports d'expertise du Cabinet sont établis selon les standards professionnels exigés par les établissements financiers et les juridictions de Madagascar.
+    </p>
+  </section>
+
+  <!-- FAQ — AEO OPTIMISÉ -->
+  <section id="faq" class="section">
+    <h2 class="section-title reveal-item">Questions Fréquentes</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Tout ce que vous devez savoir sur l'expertise immobilière à
+      Madagascar.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Qu'est-ce qu'un expert en Bâtiments et Biens immobiliers agréé près les Cours et Tribunaux à Madagascar
+            ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Un expert agréé près les Cours et Tribunaux est un professionnel officiellement reconnu par le système judiciaire malagasy pour produire des évaluations et rapports d'expertise ayant force probante en justice. <strong>M. RABENIMANANA Normand est inscrit à la CAREA depuis 1990</strong> ; ses rapports sont dotés de la force probante reconnue à cette qualité, leur portée à l'égard des tiers s'appréciant selon le droit commun.
         </div>
       </div>
-    </section>
-
-    <!-- === FAQ === -->
-    <section id="faq" class="section section--ivory">
-      <div class="container">
-        <div class="section-header">
-          <p class="surtitle">QUESTIONS FRÉQUENTES</p>
-          <span class="filet filet--center"></span>
-          <h2>Réponses aux interrogations courantes</h2>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Qu'est-ce qu'un Expert en Bâtiments et Biens Immobiliers Agréé près les Cours et Tribunaux ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>Un Expert en Bâtiments et Biens Immobiliers Agréé près les Cours et Tribunaux est un professionnel officiellement inscrit sur la liste tenue par la Cour d'Appel, habilité à établir des rapports d'expertise ayant force probante en justice. Sa qualification couvre à la fois l'évaluation des biens (vénale, locative, hypothécaire) et l'expertise technique du bâti (pathologie, sinistres, structure) — un périmètre plus large que celui d'un expert immobilier généraliste. M. RABENIMANANA Normand est inscrit sur la liste de la CAREA depuis 1990, parmi les membres en exercice continu les plus anciens. Ses rapports sont opposables aux tiers devant l'ensemble des juridictions de Madagascar.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Qu'est-ce que la CAREA ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>La CAREA — Compagnie des Arbitres Rapporteurs et Experts Agréés près les Cours et Tribunaux de Madagascar — est la compagnie professionnelle réunissant les experts inscrits sur la liste tenue par les juridictions. Son code de déontologie impose à ses membres l'indépendance, l'impartialité, la probité, la compétence et la confidentialité.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Comment obtenir un rapport d'expertise pour un dossier bancaire ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>Pour tout dossier de crédit immobilier ou de constitution de garantie hypothécaire, un rapport d'évaluation vénale signé par un expert agréé est requis par les principales banques de la place malgache. La saisine s'effectue par formulaire ou par courrier institutionnel adressé au Cabinet. Une convention d'honoraires est établie préalablement à toute intervention.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Quel est le délai d'établissement d'un rapport ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>Pour une mission amiable portant sur un bien standard à Antananarivo, le délai est généralement compris entre cinq et quinze jours ouvrables à compter de la signature de la convention et de la remise des pièces (titre foncier, plans, état des lieux). Pour une mission judiciaire, le délai est fixé par l'ordonnance de la juridiction.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Le Cabinet intervient-il en dehors d'Antananarivo ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>Oui. Le Cabinet intervient sur l'ensemble du territoire malgache, en province comme en zones rurales. Les frais de déplacement sont chiffrés à l'avance et soumis à l'approbation du mandant avant toute mission sur le terrain.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Les honoraires sont-ils proportionnels à la valeur du bien ?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg></button>
-            <div class="faq-answer"><p>Non. Aucun honoraire pratiqué par le Cabinet n'est calculé de manière proportionnelle à la valeur du bien expertisé. Cette règle est le pilier de l'indépendance de l'expert : l'expert ne possède aucun intérêt direct, indirect ou économique dans le résultat de son évaluation.</p></div>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Qu'est-ce que la CAREA et pourquoi est-ce important ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          La <strong>CAREA (Compagnie des Arbitres Rapporteurs et Experts Agréés)</strong> regroupe les experts officiellement agréés par les tribunaux malagasy. L'inscription atteste de la compétence professionnelle de l'expert et de son adhésion au code de déontologie de la Compagnie. M. RABENIMANANA Normand en est membre depuis 1990.
         </div>
       </div>
-    </section>
-
-    <!-- === SAISIR LE CABINET === -->
-    <section id="contact" class="section section--navy">
-      <div class="container">
-        <div class="section-header">
-          <p class="surtitle surtitle--light">SAISINE INSTITUTIONNELLE</p>
-          <span class="filet filet--center"></span>
-          <h2 style="color:var(--ivory)">Saisir le Cabinet</h2>
-          <p class="contact-intro">Toute saisine fait l'objet d'un examen préalable. Une convention d'honoraires écrite est établie avant tout commencement d'instruction. L'ensemble des échanges est couvert par le secret professionnel.</p>
-        </div>
-
-        <div class="contact-coords">
-          <div class="contact-col">
-            <span class="contact-col-title">TÉLÉPHONE CABINET</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <a href="tel:+261320779263" class="contact-link contact-main-link">+261 32 07 79 263</a>
-            <span class="contact-mention">Standard du Cabinet — Telma</span>
-          </div>
-          <div class="contact-col">
-            <span class="contact-col-title">TÉLÉPHONE DIRECT</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <a href="tel:+261340396229" class="contact-link contact-main-link">+261 34 03 96 229</a>
-            <span class="contact-mention">Ligne directe de l'Expert — Orange</span>
-          </div>
-          <div class="contact-col">
-            <span class="contact-col-title">COURRIEL CABINET</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <a href="mailto:contact@expertimmo.mg" class="contact-link contact-main-link">contact@expertimmo.mg</a>
-            <span class="contact-mention">Adresse institutionnelle</span>
-          </div>
-          <div class="contact-col">
-            <span class="contact-col-title">COURRIEL EXPERT</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <a href="mailto:rabenimanana-ecr@moov.mg" class="contact-link contact-main-link">rabenimanana-ecr@moov.mg</a>
-            <span class="contact-mention">Adresse directe — M. RABENIMANANA Normand</span>
-          </div>
-        </div>
-
-        <span class="filet filet--center" style="margin:3rem auto"></span>
-
-        <div class="contact-address-grid">
-          <div class="contact-address-col">
-            <span class="contact-col-title">ADRESSE</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <p class="contact-address-text">Lot 94, Analamahitsy<br>Antananarivo 101, Madagascar</p>
-            <a href="https://maps.google.com/?q=Lot+94+Analamahitsy+Antananarivo" target="_blank" rel="noopener noreferrer" class="contact-link">Voir sur Google Maps</a>
-          </div>
-          <div class="contact-address-col">
-            <span class="contact-col-title">RÉCEPTION</span><span class="filet filet--40" style="margin:0.5rem 0"></span>
-            <p class="contact-address-text">Du lundi au vendredi<br>sur rendez-vous préalable<br>8h00 — 17h00 (heure locale)</p>
-          </div>
-        </div>
-
-        <span class="filet filet--center" style="margin:3rem auto"></span>
-
-        <div class="contact-form-wrap">
-          <p class="surtitle surtitle--light" style="text-align:center">DEMANDE DÉTAILLÉE</p>
-          <h3 class="contact-form-title">Pour une saisine formelle ou une demande nécessitant un examen approfondi</h3>
-          <form class="contact-form" novalidate>
-            <select name="civilite" id="civilite"><option value="">Civilité</option><option>Maître</option><option>Notaire</option><option>Magistrat</option><option>Madame</option><option>Monsieur</option><option>Société</option></select>
-            <input type="text" name="nom" id="nom" placeholder="Nom complet" required>
-            <input type="text" name="qualite" id="qualite" placeholder="Qualité ou raison sociale">
-            <input type="email" name="email" id="email" placeholder="Courriel professionnel" required>
-            <input type="tel" name="telephone" id="telephone" placeholder="Téléphone">
-            <select name="mission" id="mission" required><option value="">Nature de la mission</option><option>Expertise Judiciaire et Contradictoire</option><option>Évaluation Vénale</option><option>Évaluation Locative</option><option>Garantie Hypothécaire</option><option>Expertise en Pathologie du Bâtiment</option><option>Expertise en Sinistres Immobiliers</option><option>Expertise Patrimoniale et Successorale</option><option>Autre</option></select>
-            <textarea name="description" id="description" rows="5" placeholder="Description du bien et du contexte" required></textarea>
-            <label class="form-checkbox"><input type="checkbox" name="confidentialite" required><span>J'ai pris connaissance de la <a href="/confidentialite.html" class="contact-link">politique de confidentialité</a> du Cabinet.</span></label>
-            <button type="submit" class="btn-submit">TRANSMETTRE LA SAISINE</button>
-          </form>
-          <p class="contact-form-note">L'ensemble des informations transmises est couvert par le secret professionnel et la déontologie CAREA.</p>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Comment obtenir un rapport d'expertise pour un dossier bancaire à Madagascar ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Pour tout dossier de crédit immobilier, garantie hypothécaire ou financement bancaire à Madagascar, vous avez besoin d'un rapport d'expertise signé par un expert agréé. Le Cabinet établit des rapports d'évaluation vénale conformes aux standards des établissements de crédit malagasy. Contactez-nous via le
+          formulaire pour une proposition d'honoraires
+          personnalisée.
         </div>
       </div>
-    </section>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Quelle est la valeur vénale d'un bien immobilier à Antananarivo ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          La valeur vénale d'un bien immobilier à Antananarivo varie en fonction de la localisation (Analamahitsy,
+          Ambohijatovo, Ivandry...), de la superficie, de l'état général, du type de titre de propriété et
+          des transactions comparables sur le marché. Une évaluation établie par un expert agréé est généralement requise pour les transactions, successions, partages et financements bancaires.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Dans quel délai peut-on obtenir un rapport d'expertise immobilière ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Le délai dépend de la complexité du bien et de sa localisation. Pour un bien standard à Antananarivo, comptez
+          généralement entre <strong>5 et 15 jours ouvrables</strong> à compter de la réception de l'ordre de mission
+          signé et des documents nécessaires (titre foncier, plans, état des lieux...). Pour les expertises judiciaires,
+          le délai est fixé par l'ordonnance de la juridiction.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>ExpertImmo intervient-il en dehors d'Antananarivo ?</span>
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Oui, le Cabinet intervient à travers <strong>Madagascar</strong> — Toamasina,
+          Fianarantsoa, Mahajanga, Toliara, Antsiranana et zones rurales. Les frais de déplacement sont chiffrés et
+          soumis à approbation avant engagement, conformément à notre convention d'honoraires.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ═════════════════════════════════════════════════════════════════════════
+       SECTION RÉFÉRENCES INSTITUTIONNELLES — DÉSACTIVÉE
+       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+       Cette section est volontairement vide tant que les autorisations écrites
+       de publication n'ont pas toutes été reçues des établissements concernés.
+
+       Lors de la réactivation :
+       1. Réécrire le titre en évitant "Ils nous font confiance" (formulation
+          marketing à risque déontologique — voir audit DÉON-3).
+       2. Préférer : "Établissements pour lesquels le Cabinet est intervenu,
+          avec autorisation écrite de publication".
+       3. Présentation sobre, sans logos couleur, sans hiérarchie, par ordre
+          alphabétique.
+       4. Ne lister que les établissements ayant donné leur accord écrit signé.
+       ═════════════════════════════════════════════════════════════════════════ -->
+
+
+  <!-- RESSOURCES — MAILLAGE INTERNE SEO/AEO/GEO -->
+  <section class="section" id="articles" style="background-color: var(--primary);" aria-label="Ressources et articles">
+    <h2 class="section-title reveal-item" style="color: #ffffff;">Articles</h2>
+    <div class="title-underline"></div>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Guides pratiques rédigés par M. RABENIMANANA Normand, expert agréé CAREA depuis 1990.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; max-width:1000px; margin:2.5rem auto 0;">
+
+      <article class="article-card">
+        <span style="font-size:0.78rem; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em;">Guide · Évaluation</span>
+        <h3 class="reveal-item" style="font-family:var(--font-heading); font-size:1.25rem; color:var(--primary); margin:0; line-height:1.3;">
+          <a href="articles/evaluation-venale-madagascar" style="color:inherit; text-decoration:none;">Comprendre l'évaluation vénale d'un bien immobilier à Madagascar</a>
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin:0; flex-grow:1;">Définition, méthodes (comparaison, capitalisation, coût de remplacement) et cadre juridique de l'évaluation vénale à Madagascar.</p>
+        <a href="articles/evaluation-venale-madagascar" style="color:var(--accent); font-size:0.9rem; font-weight:500; text-decoration:none; align-self:flex-start;">Lire l'article →</a>
+      </article>
+
+      <article class="article-card">
+        <span style="font-size:0.78rem; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em;">Guide · CAREA</span>
+        <h3 class="reveal-item" style="font-family:var(--font-heading); font-size:1.25rem; color:var(--primary); margin:0; line-height:1.3;">
+          <a href="articles/expert-carea-transactions-immobilieres" style="color:inherit; text-decoration:none;">L'expert CAREA et les transactions immobilières à Madagascar</a>
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin:0; flex-grow:1;">Rôle de l'expert agréé CAREA, valeur juridique de ses rapports, et types de transactions où son intervention est indispensable.</p>
+        <a href="articles/expert-carea-transactions-immobilieres" style="color:var(--accent); font-size:0.9rem; font-weight:500; text-decoration:none; align-self:flex-start;">Lire l'article →</a>
+      </article>
+
+      <article class="article-card">
+        <span style="font-size:0.78rem; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em;">Guide · Investissement</span>
+        <h3 class="reveal-item" style="font-family:var(--font-heading); font-size:1.25rem; color:var(--primary); margin:0; line-height:1.3;">
+          <a href="articles/investir-immobilier-madagascar-expertise" style="color:inherit; text-decoration:none;">Investir dans l'immobilier à Madagascar : le rôle de l'expertise</a>
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin:0; flex-grow:1;">Opportunités, risques et due diligence immobilière à Madagascar. Ce que l'expert indépendant apporte à l'investisseur local et étranger.</p>
+        <a href="articles/investir-immobilier-madagascar-expertise" style="color:var(--accent); font-size:0.9rem; font-weight:500; text-decoration:none; align-self:flex-start;">Lire l'article →</a>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="glossaire" style="display:inline-flex; align-items:center; gap:8px; color:#0A192F; font-weight:600; font-size:0.95rem; text-decoration:none; border:1px solid #D4AF37; background:#D4AF37; padding:10px 24px; border-radius:4px; transition:all 0.3s ease; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);">
+        📖 Consulter le Glossaire de l'expertise immobilière
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section bg-light">
+    <h2 class="section-title reveal-item">Nous Contacter</h2>
+    <div class="title-underline"></div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Prendre Rendez-vous</h3>
+        <p style="font-size:1.1rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.6">
+          Échange confidentiel sur votre dossier d'expertise immobilière.</p>
+
+        <div class="info-item">
+          <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg></span>
+          <div>
+            <strong>Siège Social</strong>
+            <span><a href="https://www.google.com/maps?cid=18374368972118443577" target="_blank" rel="noopener noreferrer" class="contact-hover-underline">Lot 94 Analamahitsy, Antananarivo, Madagascar</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></span>
+          <div>
+            <strong>Téléphones</strong>
+            <span><a href="tel:+261320779263" class="contact-hover-underline">+261 (0) 32 07 792 63</a> &amp;
+              <a href="tel:+261340396229" class="contact-hover-underline">+261 (0) 34 03 962 29</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg></span>
+          <div>
+            <strong>Email Direct</strong>
+            <span><a href="mailto:contact@expertimmo.mg" class="contact-hover-underline">contact@expertimmo.mg</a><br><a
+                href="mailto:rabenimanana-ecr@moov.mg" class="contact-hover-underline">rabenimanana-ecr@moov.mg</a></span>
+          </div>
+        </div>
+
+        <div class="info-carea-box">
+          <p><strong>Cabinet ExpertImmo</strong> fondé par RABENIMANANA Normand, Expert en Bâtiments et Biens immobiliers Agréé près les Cours et Tribunaux de Madagascar – Membre de la CAREA depuis 1990.</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form action="contact.php" method="POST" class="contact-form">
+          <!-- Honeypot anti-spam : champ invisible pour les humains -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+            <label for="website_url">Ne pas remplir ce champ</label>
+            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
+          </div>
+          <input type="hidden" name="langue_site" value="Français">
+
+          <div class="form-group">
+            <label class="form-label" for="name">Nom Complet *</label>
+            <input type="text" id="name" name="nom" class="form-control" placeholder="Votre nom complet" required aria-required="true">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="telephone" class="form-control" placeholder="+261 ...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Motif de la demande *</label>
+            <select id="subject" name="motif" class="form-control" required aria-required="true">
+              <option value="">Sélectionnez un motif...</option>
+              <option value="Évaluation pour dossier bancaire / Garantie hypothécaire">Évaluation pour dossier bancaire / Garantie hypothécaire</option>
+              <option value="Évaluation vénale (vente, succession, partage)">Évaluation vénale (vente, succession, partage)</option>
+              <option value="Expertise judiciaire / Litige">Expertise judiciaire / Litige</option>
+              <option value="Expertise patrimoniale">Expertise patrimoniale</option>
+              <option value="Évaluation locative">Évaluation locative</option>
+              <option value="Autre demande">Autre demande</option>
+            </select>
+          </div>
+
+          <!-- Grille Caractéristiques du Bien -->
+          <div class="property-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1rem;">
+
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="propertyType">Type de bien *</label>
+              <select id="propertyType" name="type_bien" class="form-control" required aria-required="true">
+                <option value="">Sélectionnez un type...</option>
+                <option value="Terrain nu">Terrain nu</option>
+                <option value="Maison individuelle / Villa">Maison individuelle / Villa</option>
+                <option value="Appartement">Appartement</option>
+                <option value="Local commercial">Local commercial</option>
+                <option value="Immeuble de rapport">Immeuble de rapport</option>
+                <option value="Bâtiment industriel / Entrepôt">Bâtiment industriel / Entrepôt</option>
+                <option value="Complexe hôtelier">Complexe hôtelier</option>
+                <option value="Autre type de bien">Autre type de bien</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Nombre de pièces</label>
+              <div class="stepper-control" style="display:flex; align-items:center; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
+                <button type="button" class="stepper-btn" onclick="updateStepper('rooms', -1)" style="flex:1; background:#f5f7fa; border:none; padding:12px; cursor:pointer; font-weight:bold; font-size:1.1rem; color:var(--primary); transition:background 0.3s;">-</button>
+                <input type="text" id="rooms" name="pieces" value="0" readonly style="width:50px; text-align:center; border:none; font-family:var(--font-body); font-weight:600; font-size:1rem; color:var(--text); background:white;">
+                <button type="button" class="stepper-btn" onclick="updateStepper('rooms', 1)" style="flex:1; background:#f5f7fa; border:none; padding:12px; cursor:pointer; font-weight:bold; font-size:1.1rem; color:var(--primary); transition:background 0.3s;">+</button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Nombre d'étages</label>
+              <div class="stepper-control" style="display:flex; align-items:center; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
+                <button type="button" class="stepper-btn" onclick="updateStepper('floors', -1)" style="flex:1; background:#f5f7fa; border:none; padding:12px; cursor:pointer; font-weight:bold; font-size:1.1rem; color:var(--primary); transition:background 0.3s;">-</button>
+                <input type="text" id="floors" name="etages" value="0" readonly style="width:50px; text-align:center; border:none; font-family:var(--font-body); font-weight:600; font-size:1rem; color:var(--text); background:white;">
+                <button type="button" class="stepper-btn" onclick="updateStepper('floors', 1)" style="flex:1; background:#f5f7fa; border:none; padding:12px; cursor:pointer; font-weight:bold; font-size:1.1rem; color:var(--primary); transition:background 0.3s;">+</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="area">Superficie (m²)</label>
+            <input type="text" id="area" name="superficie" class="form-control"
+                   placeholder="Ex : 250 ou 250,50"
+                   pattern="[0-9]+([.,][0-9]{1,2})?"
+                   title="Entrez une surface (ex: 250 ou 250,5)"
+                   inputmode="decimal">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Commodités</label>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:0.8rem; padding:0.5rem 0;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem; color:var(--text-light);"><input type="checkbox" id="amenity-elevator" name="commodite_ascenseur" value="Ascenseur" style="width:16px;height:16px;accent-color:var(--primary);"> Ascenseur</label>
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem; color:var(--text-light);"><input type="checkbox" id="amenity-balcony" name="commodite_balcon_terrasse" value="Balcon / Terrasse" style="width:16px;height:16px;accent-color:var(--primary);"> Balcon / Terrasse</label>
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem; color:var(--text-light);"><input type="checkbox" id="amenity-garden" name="commodite_jardin" value="Jardin" style="width:16px;height:16px;accent-color:var(--primary);"> Jardin</label>
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem; color:var(--text-light);"><input type="checkbox" id="amenity-parking" name="commodite_garage_parking" value="Garage / Parking" style="width:16px;height:16px;accent-color:var(--primary);"> Garage / Parking</label>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="city-input">Ville *</label>
+              <div class="autocomplete-wrapper">
+                <input type="text" id="city-input" class="form-control" placeholder="Rechercher une ville..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="city-list" aria-autocomplete="list" required aria-required="true">
+                <input type="hidden" id="city" name="ville">
+                <div class="autocomplete-list" id="city-list" role="listbox" aria-label="Villes"></div>
+              </div>
+              <input type="text" id="city-custom" name="ville_autre" class="form-control autocomplete-custom-input" placeholder="Précisez la ville..." style="display:none;">
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="quartier-input">Quartier *</label>
+              <div class="autocomplete-wrapper">
+                <input type="text" id="quartier-input" class="form-control" placeholder="Sélectionnez d'abord une ville..." autocomplete="off" disabled role="combobox" aria-expanded="false" aria-controls="quartier-list" aria-autocomplete="list" required aria-required="true">
+                <input type="hidden" id="quartier" name="quartier">
+                <div class="autocomplete-list" id="quartier-list" role="listbox" aria-label="Quartiers"></div>
+              </div>
+              <input type="text" id="quartier-custom" name="quartier_autre" class="form-control autocomplete-custom-input" placeholder="Précisez le quartier..." style="display:none;">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Précisions complémentaires</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Autres informations utiles..." rows="3"></textarea>
+          </div>
+
+          <!-- ═══ CONSENTEMENT RGPD / LOI N°2014-038 MADAGASCAR ═══ -->
+          <div class="form-group" style="margin-bottom:1.2rem;">
+            <label for="consent-rgpd" style="display:flex; align-items:flex-start; gap:0.7rem; cursor:pointer; font-size:0.88rem; color:var(--text-light); line-height:1.55;">
+              <input type="checkbox" id="consent-rgpd" name="consentement_donnees" value="J'accepte" required aria-required="true"
+                     style="width:18px; height:18px; margin-top:0.2rem; accent-color:var(--primary); flex-shrink:0; cursor:pointer;">
+              <span>
+                J'accepte que mes données personnelles soient traitées par le Cabinet ExpertImmo aux seules fins du traitement de ma demande d'expertise, conformément à la <a href="confidentialite" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:underline;">Politique de Confidentialité</a> du Cabinet et à la Loi n°2014-038 du 9 janvier 2015 sur la protection des données à caractère personnel à Madagascar. <span style="color:#c0392b;">*</span>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="cta-button" style="width:100%;font-size:0.95rem;padding:1rem">
+            Envoyer la Demande
+          </button>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.8rem;text-align:center;line-height:1.6">
+            Toutes les informations transmises sont couvertes par le secret professionnel.<br>
+            Toute demande est étudiée sous réserve des règles de déport et de conflit d'intérêts applicables aux experts agréés CAREA.
+          </p>
+        </form>
+        <div id="contact-success-msg" style="display:none;margin-top:1.5rem;padding:1.2rem;border:2px solid #1D9E75;background-color:rgba(29,158,117,0.08);border-radius:6px;color:#1B8562;font-size:0.95rem;line-height:1.6;font-weight:500;text-align:center;"></div>
+        <p id="form-fallback-msg" style="display:none;color:#c0392b;font-size:0.88rem;margin-top:0.8rem;text-align:center;line-height:1.5;font-weight:500;"></p>
+      </div>
+
+
+
+
+      <!-- Autocomplete engine & cascade logic -->
+
+    </div>
+  </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="footer-logo">ExpertImmo</span>
-        <span class="footer-baseline">Cabinet RABENIMANANA Normand</span>
-        <p class="footer-desc">Cabinet d'expertise en bâtiments et biens immobiliers fondé en 1990 à Antananarivo. Agréé près les Cours et Tribunaux de Madagascar. Membre de la CAREA.</p>
-      </div>
-      <div class="footer-col">
-        <span class="footer-col-title">Navigation</span>
-        <div class="footer-links">
-          <a href="/">Accueil</a>
-          <a href="/#a-propos">Le Cabinet</a>
-          <a href="/#domaines">Domaines d'Intervention</a>
-          <a href="/#methodologie">Méthodologie</a>
-          <a href="/honoraires.html">Honoraires</a>
-          <a href="/#contact">Contact</a>
-          <a href="/mentions-legales.html">Mentions légales</a>
-          <a href="/cgu.html">CGU</a>
-          <a href="/confidentialite.html">Confidentialité</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <span class="footer-col-title">Articles</span>
-        <div class="footer-links">
-          <a href="/articles/evaluation-venale-madagascar.html">Évaluation vénale à Madagascar</a>
-          <a href="/articles/expert-carea-transactions-immobilieres.html">Expert CAREA et transactions</a>
-          <a href="/articles/investir-immobilier-madagascar-expertise.html">Investir à Madagascar</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <span class="footer-col-title">Contact</span>
-        <p class="footer-contact-text">Lot 94, Analamahitsy<br>Antananarivo 101, Madagascar</p>
-        <a href="mailto:contact@expertimmo.mg" class="footer-contact-link">contact@expertimmo.mg</a>
-        <a href="mailto:rabenimanana-ecr@moov.mg" class="footer-contact-link">rabenimanana-ecr@moov.mg</a>
-        <a href="tel:+261320779263" class="footer-contact-link">+261 32 07 79 263</a>
-        <a href="tel:+261340396229" class="footer-contact-link">+261 34 03 96 229</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Cabinet ExpertImmo — Cabinet RABENIMANANA Normand · Agréé près les Cours et Tribunaux de Madagascar depuis 1990</span>
-      <span class="deonto">Indépendance · Impartialité · Probité · Compétence · Confidentialité</span>
-    </div>
-  </footer>
+  <!-- FOOTER -->
 
-  <script src="/assets/js/main.js"></script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/261340396229?text=Bonjour,%20je%20souhaite%20une%20expertise%20immobili%C3%A8re"
+    target="_blank" rel="noopener" aria-label="Contacter via WhatsApp" class="whatsapp-float">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- FOOTER (injecté depuis components/footer.html) -->
+  <div id="site-footer">
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo">ExpertImmo</span>
+      <div class="footer-carea">Membre CAREA · Agréé depuis 1990</div>
+      <p class="footer-desc">
+        Cabinet d'expertise immobilière fondé en 1990 par M. RABENIMANANA Normand.<br>
+        Expert en Bâtiments et Biens immobiliers Agréé près les Cours et Tribunaux de Madagascar.<br>
+        Membre de la CAREA — Compagnie des Arbitres Rapporteurs et Experts Agréés.
+      </p>
+
+
+    </div>
+    <div>
+      <h4 class="footer-title">Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">Le Cabinet</a></li>
+        <li><a href="#services">Nos Services</a></li>
+        <li><a href="#pour-qui">Pour qui ?</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    <li><a href="#articles">Articles</a></li>
+
+      </ul>
+
+    </div>
+    <div>
+      <h4 class="footer-title">Informations Légales</h4>
+      <ul class="footer-links">
+        <li><a href="mentions-legales">Mentions Légales</a></li>
+        <li><a href="cgu">Conditions d'Utilisation</a></li>
+        <li><a href="confidentialite">Politique de Confidentialité</a></li>
+        <li><a href="honoraires">Honoraires</a></li>
+        <li><a href="glossaire">Glossaire</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 0.5rem;">
+      <span>&copy; 2026 Cabinet d'expertise immobilière ExpertImmo | RABENIMANANA Normand — Tous droits réservés.</span>
+
+    </div>
+    <div style="width: 100%; text-align: center; margin-top: 1rem; font-size: 0.7rem; color: rgba(255, 255, 255, 0.3);">
+      Toutes les expertises sont menées dans le respect du code de déontologie de la CAREA : indépendance, impartialité, probité, compétence et confidentialité.
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="js/locations.js"></script>
+  <script src="assets/js/main.js"></script>
+<!-- â• â• â•  CORRECTIF ADDITIF FORMULAIRE (n'altère rien d'existant) â• â• â•  -->
+<script>
+(function () {
+  var form = document.querySelector('form[action$="contact.php"]');
+  if (!form) return;
+
+  /* (1) Autoriser une Ville / un Quartier saisi librement (hors liste) :
+     la valeur tapée est recopiée dans le champ caché juste avant l'envoi. */
+  function commitField(inputId, hiddenId) {
+    var input = document.getElementById(inputId);
+    var hidden = document.getElementById(hiddenId);
+    if (!input || !hidden) return;
+    var typed = (input.value || '').trim();
+    if (!typed) return;
+    if (hidden.value) return;
+    hidden.value = typed;
+  }
+  function commitAll() {
+    commitField('city-input', 'city');
+    commitField('quartier-input', 'quartier');
+  }
+  ['city-input', 'quartier-input'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('blur', function () { setTimeout(commitAll, 200); });
+  });
+  form.addEventListener('submit', commitAll, true);
+
+  /* (2) Messages de validation natifs en français. */
+  var FR = {
+    select:   'Veuillez sélectionner un élément dans la liste.',
+    checkbox: 'Veuillez cocher cette case pour continuer.',
+    field:    'Veuillez remplir ce champ.',
+    email:    'Veuillez saisir une adresse email valide.',
+    pattern:  'Le format saisi n\'est pas valide.'
+  };
+  form.querySelectorAll('input, select, textarea').forEach(function (el) {
+    el.addEventListener('invalid', function () {
+      var m = '';
+      if (el.validity.valueMissing) {
+        if (el.tagName === 'SELECT') m = FR.select;
+        else if (el.type === 'checkbox' || el.type === 'radio') m = FR.checkbox;
+        else m = FR.field;
+      } else if (el.validity.typeMismatch && el.type === 'email') {
+        m = FR.email;
+      } else if (el.validity.patternMismatch) {
+        m = FR.pattern;
+      }
+      if (m) el.setCustomValidity(m);
+    });
+    function clear() { el.setCustomValidity(''); }
+    el.addEventListener('input', clear);
+    el.addEventListener('change', clear);
+  });
+})();
+
+// Scroll Progress Bar Logic
+(function() {
+  var progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    function updateProgress() {
+      var scrollTotal = document.documentElement.scrollTop || document.body.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (height <= 0) {
+        progressBar.style.width = '0%';
+        return;
+      }
+      var scrolled = (scrollTotal / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('load', updateProgress);
+    updateProgress();
+  }
+})();
+</script>
+  <script src="js/app.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const profileObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          entry.target.classList.remove('opacity-0');
+        } else {
+          entry.target.classList.remove('animate-fade-in-up');
+          entry.target.classList.add('opacity-0');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.profile-carousel-item').forEach(el => {
+      el.classList.add('opacity-0');
+      profileObs.observe(el);
+    });
+  });
+  </script>
 </body>
+
 </html>
